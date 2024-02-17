@@ -1,0 +1,36 @@
+.div-container{
+    max-width: 100%;
+    display: flex;
+    padding: 50px;
+}
+
+h1{
+    font-weight: 700px;
+    font-size: 64px;
+    color: #099237;
+}
+span{
+    color: #000000;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    width: 750px;
+    
+}
+.text-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    flex-grow: 1
+}
+.img-container{
+    
+    flex-grow: 1;
+}
+
+p{
+    margin-top: -30px;
+}
