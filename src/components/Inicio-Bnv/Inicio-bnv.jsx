@@ -8,11 +8,14 @@ function InicioBnv(){
     
         <BnvDiv className="div-container">
             <div className="text-container">
-                <h1>Buttercream <span>- Deliciosas tartas personalizadas</span></h1>
-                <p>Haz que tus vacaciones sean aun mejores. Con nosotros tendras tranquilidad sobre tus eventos</p>
+                <h3 className="text-tittle">Bakery</h3>
+                <p className="text-pa">
+                    Deliciosas tartas personalizadas. Haz que tus vacaciones sean aun mejores con nosotros tendras tranquilidad sobre tus eventos
+                </p>
+                <button className="btn-leer">Leer mas</button>
             </div>
             <div className="img-container">
-                <img src="../public/images/InicioTorta.png" alt="Una tortica"/>
+                <img src="../public/images/InicioCupcake.png" alt="Una tortica"/>
             </div>
         </BnvDiv>
     
