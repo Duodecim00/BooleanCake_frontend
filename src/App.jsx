@@ -1,19 +1,16 @@
 import React from 'react'
 import './App.css'
-import NavLogin from './components/Inicio-nav.jsx'
-import InicioBnv from './components/Inicio-bnv.jsx'
+import InicioPage from './Pages/Inicio';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
-
   return (
-    <>
-      <div>
-        <NavLogin></NavLogin>
-
-        <InicioBnv></InicioBnv>
-      </div>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<InicioPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App
