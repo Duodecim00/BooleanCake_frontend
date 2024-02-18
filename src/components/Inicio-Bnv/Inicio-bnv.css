@@ -1,42 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+
 *{
     background-color: #fff5f9;
 }
 .div-container{
     max-width: 100%;
     display: flex;
-    padding: 50px;
+    padding: 10px 100px;
     text-align: start;
 
 }
 
-h1{
-    font-weight: 700px;
-    font-size: 64px;
-    color: #099237;
+.text-container{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column; 
+    flex-grow: 1;
+   
 }
-span{
-    color: #000000;
+.text-tittle{
+    margin: 0;
+    font-weight: 400;
+    font-size: 150px;
+    font-family: "Rozha One", serif;
+    text-transform: lowercase;
+}
+.text-pa{
+    margin-top: -15px;
+    font-weight: 500px;
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+    margin-right: 160px;
+}
+.img-container{
+    margin-right: 100px;
+    flex-grow: 1;
 }
 
-img{
+.img-container img{
     max-width: 100%;
     max-height: 100%;
     width: 750px;
     
 }
-.text-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; 
-    flex-grow: 1
-}
-.img-container{
-    
-    flex-grow: 1;
+
+.btn-leer{
+    text-decoration: none;
+    color: #FDAB4A;
+    font-family: "Inter", sans-serif;
+    border: 1px solid #FDAB4A;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 25px;
+    padding: 30px 50px;
+    margin-top: 40px;
+    cursor: pointer;
 }
 
-p{
-    font-size: 30px;
-    margin-top: -30px;
+.btn-leer:hover{
+    color: #FFFFFF;
+    background-color: #FDAB4A;
+    transition: .5s;
 }

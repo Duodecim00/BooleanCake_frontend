@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ramaraja&display=swap');
 
 .nav-container{
+    margin: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;   

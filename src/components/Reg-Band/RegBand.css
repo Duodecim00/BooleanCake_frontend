@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Ramaraja&display=swap');
+
+.img-container_reg{
+    background-image: url("../../../public/images/band-regimg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 105vh;
+    width: 33.33%;
+    margin-top: -20px;
+    margin-left: -20px;
+    position: fixed;
+}
+
+.band-tittle {
+    font-weight: 400;
+    font-size: 48px;
+    font-family:  "Ramaraja", serif;
+    background-color: transparent;
+    position: absolute;
+    top: 30px;
+    left: 75px;
+    color: white;
+    text-decoration: none;
+  }
+
+
+
+
