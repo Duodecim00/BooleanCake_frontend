@@ -1,3 +1,6 @@
+*{
+    background-color: #fff5f9;
+}
 .div-container{
     max-width: 100%;
     display: flex;
