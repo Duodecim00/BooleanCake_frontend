@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './InputText.css'
 const InputText = ({ label, type, validationFunctions }) => {
   const [text, setText] = useState('');
   const [error, setError] = useState('');
@@ -20,12 +20,11 @@ const InputText = ({ label, type, validationFunctions }) => {
   };
 
   return (
-    <div>
-      {/* <label>{label}</label> */}
-      <input
+    <div className=''>
+      <label className='labelInput'>{label}</label>
+      <input className=''
         type={type}
         value={text}
-        placeholder={label}
         onChange={handleChange}
         onBlur={handleBlur}
       />

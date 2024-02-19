@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&family=Rozha+One&display=swap');
+
+.login{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+.login__helperContainer{
+    display: 'flex';
+    justify-content: 'center';
+}
+
+.login__container{
+    /* background-color: rgba(190, 18, 18, 0.1); */
+   
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    /* padding: 60px 68px 40px; */
+    width: 100% ;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.login__welcomeText{  
+    font-family: "Rozha One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 64px;
+    color: #FDAB4A;
+}
+
+.labelInput{
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #DFD9D9;
+}
+
+.login__container--register{
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  /* font-style: normal; */
+
+  color: #DFD9D9;
+  font-variation-settings:
+    "slnt" 0;
+
+}
+.login__container--register a{
+    font-size: 16px;
+    color: #FDAB4A;
+    text-decoration: none;
+    font-weight: bold;
+}

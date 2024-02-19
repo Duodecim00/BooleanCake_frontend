@@ -6,7 +6,7 @@ function RegForm(){
     return(
         <>
             <div className="form-container_reg" >
-                <h1 className="form-tittle_reg">Registrate</h1>
+                <h2 className="form-tittle_reg">Registrate</h2>
                 <form action="/registro" method="post">
                     <label htmlFor="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required/>
