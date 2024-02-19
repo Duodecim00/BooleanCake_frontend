@@ -5,8 +5,17 @@ function RegForm(){
 
     return(
         <>
-            <div>
-                
+            <div className="form-container_reg" >
+                <h1 className="form-tittle_reg">Registrate</h1>
+                <form action="/registro" method="post">
+                    <label htmlFor="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required/>
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" id="email" name="email" required/>
+                    <label htmlFor="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required/>
+                </form>
+                <button type="submit" className="btn-submit_reg">Crear cuenta</button>`
             </div>
         </>
     )
