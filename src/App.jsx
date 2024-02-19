@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import InicioPage from './Pages/Inicio';
 import RegPage from './Pages/Register';
 import Login from './Pages/login/login';
+import CakeList from './components/CakeList/CakeList';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Route exact path="/" element={<InicioPage/>}/>
         <Route exact path="/registro" element={<RegPage/>}/>
         <Route exact path="/login" element={<Login/>}/>
+        <Route exact path="/products" element={<CakeList/>}/>
+        
+
       </Routes>
     </Router>
   );
