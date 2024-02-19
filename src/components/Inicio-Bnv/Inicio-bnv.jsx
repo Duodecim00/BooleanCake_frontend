@@ -15,7 +15,7 @@ function InicioBnv(){
                 <button className="btn-leer">Leer mas</button>
             </div>
             <div className="img-container">
-                <img src="../public/images/InicioCupcake.png" alt="Una tortica"/>
+                <img src="/src/assets/images/InicioCupcake.png" alt="Una tortica"/>
             </div>
         </BnvDiv>
     

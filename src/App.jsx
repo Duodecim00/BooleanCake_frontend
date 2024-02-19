@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 import InicioPage from './Pages/Inicio';
 import RegPage from './Pages/Register';
-
+import Login from './Pages/login/login';
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<InicioPage/>}/>
         <Route exact path="/registro" element={<RegPage/>}/>
+        <Route exact path="/login" element={<Login/>}/>
       </Routes>
     </Router>
   );

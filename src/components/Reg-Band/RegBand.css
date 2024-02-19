@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ramaraja&display=swap');
 
 .img-container_reg{
-    background-image: url("../../../public/images/band-regimg.jpg");
+    background-image: url("../../assets/images/band-regimg.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
