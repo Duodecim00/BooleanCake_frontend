@@ -2,7 +2,7 @@ import React from "react";
 import InputText from "../../components/InputText/InputText";
 import './login.css';
 import RegBand from "../../components/Reg-Band/RegBand";
-import NavLogin from '../../components/Inicio-Nav/Inicio-nav';
+import '../../components/Reg-Form/RegForm.css'
 // import styled from 'styled-components';
 
 
@@ -26,7 +26,7 @@ function Login(){
 
     return(
         <>
-            <section className="login">
+            <div className="login">
                 <RegBand/>
                 <div className="login__helperContainer">
                     <section className="login__container">
@@ -41,15 +41,17 @@ function Login(){
                                 </label>
                                 <a href="/">Olvide mi clave xd no tengo n con tilde xd</a>
                             </div> */}
+
+                            <p className="login__container--register">No tienes ninguna cuenta?<a href="/registro">Registrate</a></p>
                         </form>
                         {/* <section className="login__container--social-media">
                             <div><img src="./icons/google-icon.png" alt="Google">Inicia sesion con google</div>
                             <div><img src="./icons/twitter-icon.png" alt="Google">Inicia sesion con Twitter</div>
                         </section> */}
-                        <p className="login__container--register">No tienes ninguna cuenta?<a href="/registro">Registrate</a></p>
+                        
                     </section>        
                 </div>
-            </section>
+            </div>
         </>
     );
 }
