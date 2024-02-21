@@ -70,8 +70,8 @@ function RegForm(){
 
 
                     }}
-
                     onSubmit={(values,{resetForm}) => {
+                        registerPost(values);
                         console.log('Formulario enviado');
                         resetForm();
                         cambiarFormularioEnviado(true);
@@ -147,9 +147,7 @@ function RegForm(){
 								placeholder="" 
 							/>
                             <ErrorMessage name="confirmPassword" component={() => (<div className="error">{errors.confirmPass}</div>)} />
-                        </div> 
-
-                            
+                        </div>                            
                         <div className="form-grid-cell-btn">
                         <button type="submit" className="btn-submit_reg">Crear cuenta</button>
                             {formularioEnviado && console.log('boton') && <p className="success">Formulario enviado con exito!</p>}
