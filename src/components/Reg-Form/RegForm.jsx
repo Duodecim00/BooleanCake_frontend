@@ -8,7 +8,7 @@ function RegForm(){
     const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
     return(
         <>
-            <div className="form-container" >
+            <div className="component-container_reg" >
                 <h2 className="form-tittle_reg">Registrate</h2>
                     
                 <Formik
@@ -81,6 +81,7 @@ function RegForm(){
                 >
                 {({errors} ) => (
                     <Form className="form-container_reg">
+                        
                         <div className="form-grid-cell">
                             <label htmlFor="name">Nombre</label>
                             {/* Field contiene todos los elementos handle, blur, etc. Cotenidos dentro de el */}
@@ -92,6 +93,7 @@ function RegForm(){
 							/>
 							<ErrorMessage name="name" component={() => (<div className="error">{errors.name}</div>)} />
                         </div>
+
                         <div className="form-grid-cell">
                             <label htmlFor="lastName">Apellido</label>
                             <Field
@@ -102,6 +104,7 @@ function RegForm(){
 							/>
 							<ErrorMessage name="lastName" component={() => (<div className="error">{errors.lastName}</div>)} />
                         </div>
+
                         <div className="form-grid-cell ">
                             <label htmlFor="phoneNumber">Numero de tlf</label>
                             <Field
@@ -123,6 +126,7 @@ function RegForm(){
 							/>
                             <ErrorMessage name="email" component={() => (<div className="error">{errors.email}</div>)} />
                         </div>
+
                         <div className="form-grid-cell ">
                             <label htmlFor="password">Contraseña</label>
                             <Field
@@ -133,6 +137,7 @@ function RegForm(){
 							/>
                             <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} />
                         </div>
+
                         <div className="form-grid-cell ">
                             <label htmlFor="confirmPass">Confimar contraseña</label>
                             <Field
@@ -143,10 +148,12 @@ function RegForm(){
 							/>
                             <ErrorMessage name="confirmPassword" component={() => (<div className="error">{errors.confirmPass}</div>)} />
                         </div> 
-                            <button type="submit" className="btn-submit_reg">Crear cuenta</button>
+
+                            
+                        <div className="form-grid-cell-btn">
+                        <button type="submit" className="btn-submit_reg">Crear cuenta</button>
                             {formularioEnviado && console.log('boton') && <p className="success">Formulario enviado con exito!</p>}
                             <span className="form-text_reg">Ya tienes una cuenta? <Link className="form-text-link_reg" to="/login">Iniciar Sesion</Link></span>
-                        <div className="form-grid-cell-btn">
                         </div>
                     </Form>
                 )}
