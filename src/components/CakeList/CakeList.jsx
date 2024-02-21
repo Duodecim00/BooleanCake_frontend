@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import './CakeList.css';
 const CakeList = () => {
   const [cakes, setCakes] = useState(['Pastel de chocolate', 'Pastel de vainilla', 'Pastel de fresa']);
   const [newCake, setNewCake] = useState('');
@@ -49,10 +49,10 @@ const CakeList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="cake-list-container">
       <ul>
         {cakes.map((cake, index) => (
-          <li key={index}>
+          <li key={index} className="cake-item">
             {editIndex === index ? (
               <input
                 type="text"
@@ -61,15 +61,16 @@ const CakeList = () => {
                 ref={inputRef}
               />
             ) : (
-              <span>{cake}</span>
+              <span className="cake-name">{cake}</span>
             )}
-            <button onClick={() => handleDeleteCake(index)}>Borrar</button>
-            <button onClick={() => handleEditCake(index)}>Editar</button>
+            <button className="delete-button" onClick={() => handleDeleteCake(index)}>Borrar</button>
+            <button className="edit-button" onClick={() => handleEditCake(index)}>Editar</button>
           </li>
         ))}
       </ul>
-      <input type="text" value={newCake} onChange={handleInputChange} />
-      <button onClick={handleAddCake}>Agregar pastel</button>
+  
+      <input  className="cake-input" type="text" value={newCake} onChange={handleInputChange} />
+      <button  className="add-cake-button" onClick={handleAddCake}>Agregar pastel</button>
     </div>
   );
 };

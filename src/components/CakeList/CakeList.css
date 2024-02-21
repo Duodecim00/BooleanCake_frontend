@@ -1,0 +1,50 @@
+/* CakeList.css */
+.cake-list-container {
+    margin: 2rem;
+  }
+  
+  .cake-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .cake-name {
+    flex-grow: 1;
+  }
+  
+  .edit-button, .delete-button {
+    margin-left: 0.5rem;
+  }
+  
+  .add-cake-container {
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+  .add-cake-button {
+    padding: 12px 20px;
+    background-color: #333; /* Dark gray color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 1px; /* Increase spacing between letters */
+    display: block; /* Make the button a block element */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+  }
+
+  .cake-input {
+    padding: 12px 20px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+    font-size: 16px;
+  }
