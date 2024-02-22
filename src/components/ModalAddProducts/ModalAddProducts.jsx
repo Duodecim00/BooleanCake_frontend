@@ -70,8 +70,8 @@ const PostModal = () => {
 
                     // }}
                     onSubmit={(values, {resetForm})=>{
-                        createProductsPost(values);
                         console.log(values);
+                        createProductsPost(values);
                         handleCloseModal();
                         resetForm();
                         // cambiarFormularioEnviado(true);
@@ -82,7 +82,7 @@ const PostModal = () => {
                 <Form className="container-form-grid_log">
 
                             <div>
-                                <label htmlFor="storage">Precio:</label>
+                                <label htmlFor="storage">Almacenamiento:</label>
                                 <Field
                                     type="number"
                                     id="storage"
@@ -92,7 +92,7 @@ const PostModal = () => {
                                 {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
                             </div>
                             <div>
-                                <label htmlFor="price">Nombre:</label>
+                                <label htmlFor="price">Precio:</label>
                                 <Field
                                     type="number"
                                     id="price"
@@ -111,7 +111,7 @@ const PostModal = () => {
                             </div>
                             <div>
                                 <label htmlFor="category">Nombre:</label>
-                                <input
+                                <Field
                                 type="category"
                                 id="category"
                                 name="category"
