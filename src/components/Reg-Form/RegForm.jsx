@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './RegForm.css';
 import {Link} from "react-router-dom";
-import { registerPost } from "../../Routes/routes";
+import { registerPost } from "../../Routes/user.routes";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 function RegForm(){

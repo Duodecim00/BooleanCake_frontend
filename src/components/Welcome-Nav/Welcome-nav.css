@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Ramaraja&display=swap');
+
+.nav-container{
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+    justify-content: space-around; 
+    max-width: 100%;
+    height: 75px;
+}
+
+.nav-titulo{
+    font-family: "Ramaraja", serif;
+    font-weight: 400;
+    font-size: 48px;
+    text-decoration: none;
+    color: #FDAB4A;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-btn{
+    font-weight: 600px;
+    font-size: 24px;
+    color: #000000;
+    text-decoration: none;
+    margin: 30px;
+    cursor: pointer;
+
+ 
+}
+
+.nav-btn:hover{
+    text-decoration: underline ;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+    text-decoration-color: #FDAB4A;
+    
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-btn_login{
+    font-weight: 600px;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 25px;
+    color: black;
+}
+
+.nav-btn_register{
+    text-decoration: none;
+    padding: 15px;
+    background-color: #000000;
+    font-weight: 600px;
+    border-radius: 20px;
+    color: #FFFFFF;  
+    box-shadow: 1px 1px 1px 1px rgba(131, 130, 130, 0.75);
+}
+
+.selected{
+    text-decoration: underline ;
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 3px;
+    text-decoration-color: #FDAB4A;
+}

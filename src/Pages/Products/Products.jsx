@@ -1,6 +1,8 @@
 import React from 'react';
 import NavLogin from '../../components/Inicio-Nav/Inicio-nav';
 import CakeList from '../../components/CakeList/CakeList';
+import PostModal from "../../components/ModalAddProducts/ModalAddProducts.jsx";
+
 // import './Products.css';
 
 const Products = () => {
@@ -9,6 +11,7 @@ const Products = () => {
         <NavLogin/>
         <h1 className="products-title">Productos</h1>
         <CakeList/>
+<PostModal></PostModal>
       </div>
     );
   };

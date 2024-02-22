@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './LogForm.css'
 import {Link} from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { loginPost } from "../../Routes/routes";
+import { loginPost } from "../../Routes/user.routes";
 function LogForm(){
     const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
 
@@ -68,7 +68,6 @@ function LogForm(){
                             <button type="submit" className="btn-submit_log">Iniciar Sesion</button>
                             {formularioEnviado && console.log('boton') && <p className="success">Formulario enviado con exito!</p>}
                             <span className="form-text_reg">No tienes una cuenta? <Link className="form-text-link_reg" to="/registro">Registrate</Link></span>
-
                         </div>
                         
                     </Form>)}
