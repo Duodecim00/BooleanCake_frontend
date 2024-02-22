@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './LogForm.css'
 import {Link} from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-
+import { loginPost } from "../../Routes/routes";
 function LogForm(){
     const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
 
@@ -24,11 +24,11 @@ function LogForm(){
                         errors.email = 'El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.'
                     }
                     //Validacion contrase;a
-                    if(!values.password){
-                        errors.password = 'Por favor ingresa una contraseña'
-                    } else if(!/^(?=.*\W).{8,}$/.test(values.password)){
-                        errors.password = 'La contraseña debe contener 8 caracteres o mas y minimo un caracter especial'
-                    }
+                    // if(!values.password){
+                    //     errors.password = 'Por favor ingresa una contraseña'
+                    // } else if(!/^(?=.*\W).{8,}$/.test(values.password)){
+                    //     errors.password = 'La contraseña debe contener 8 caracteres o mas y minimo un caracter especial'
+                    // }
 
                  }}
                  onSubmit={(values, {resetForm})=>{

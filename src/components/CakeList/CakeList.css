@@ -28,7 +28,7 @@
     background-color: #333; /* Dark gray color */
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 16px;
@@ -38,12 +38,21 @@
     width: 100%;
     box-sizing: border-box; /* Include padding and border in the element's width and height */
   }
+  
+  .option-button{
+    padding: 12px 20px;
+    background-color: #333; 
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+  }
 
   .cake-input {
     padding: 12px 20px;
     margin: 20px 0;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 15px;
     width: 100%;
     box-sizing: border-box; /* Include padding and border in the element's width and height */
     font-size: 16px;

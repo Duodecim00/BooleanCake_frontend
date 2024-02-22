@@ -14,9 +14,9 @@ function RegForm(){
                 <Formik
                     initialValues={{
                         name:'',
-                        lastName:'',
+                        lastname:'',
                         email:'',
-                        phoneNumber:'',
+                        cellphone:'',
                         password:'',
                         confirmPass:''
                     }}
@@ -33,10 +33,10 @@ function RegForm(){
                         // }
 
                         // Validacion Apellido
-                        if(!values.lastName){
-                            errors.lastName = 'Por favor ingresa un Apellido'
-                        } else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.lastName)){
-                            errors.lastName = 'El Apellido solo puede contener letras y espacios'
+                        if(!values.lastname){
+                            errors.lastname = 'Por favor ingresa un Apellido'
+                        } else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.lastname)){
+                            errors.lastname = 'El Apellido solo puede contener letras y espacios'
                         }
 
                         // Validacion correo
@@ -47,18 +47,18 @@ function RegForm(){
                         }
 
                         //Validar numeros de telefono
-                        if(!values.phoneNumber){
-                            errors.phoneNumber = 'Por favor ingresa un numero valido'
-                        } else if(!/^0414\d{7}$/.test(values.phoneNumber)){
-                            errors.phoneNumber = 'El numero de telefono solo puede contener numeros y el simbolo de +.'
+                        if(!values.cellphone){
+                            errors.cellphone = 'Por favor ingresa un numero valido'
+                        } else if(!/^0412\d{7}$/.test(values.cellphone)){
+                            errors.cellphone = 'El numero de telefono solo puede contener numeros y el simbolo de +.'
                         }
                         //Validar contraseñas
                         if(!values.password){
                             errors.password = 'Por favor ingresa una contraseña'
-                        } else if(!/^(?=.*\W).{8,}$/.test(values.password)){
-                            errors.password = 'La contraseña debe contener 8 caracteres o mas y minimo un caracter especial'
-                        }
-                        //Validar contraseñas
+                        } //else if(!/^(?=.*\W).{8,}$/.test(values.password)){
+                          // errors.password = 'La contraseña debe contener 8 caracteres o mas y minimo un caracter especial'
+                      // }
+                      //  Validar contraseñas
                         if(!values.confirmPass){
                             errors.confirmPass = 'Por favor ingresa una contraseña'
                         } else if(! (values.password == values.confirmPass)){
@@ -72,7 +72,7 @@ function RegForm(){
                     }}
                     onSubmit={(values,{resetForm}) => {
                         registerPost(values);
-                        console.log('Formulario enviado');
+                        console.log(values);
                         resetForm();
                         cambiarFormularioEnviado(true);
                         setTimeout(() => cambiarFormularioEnviado(false), 5000);
@@ -95,25 +95,25 @@ function RegForm(){
                         </div>
 
                         <div className="form-grid-cell">
-                            <label htmlFor="lastName">Apellido</label>
+                            <label htmlFor="lastname">Apellido</label>
                             <Field
 								type="text" 
-								id="lastName" 
-								name="lastName" 
+								id="lastname" 
+								name="lastname" 
 								placeholder=""
 							/>
-							<ErrorMessage name="lastName" component={() => (<div className="error">{errors.lastName}</div>)} />
+							<ErrorMessage name="lastname" component={() => (<div className="error">{errors.lastname}</div>)} />
                         </div>
 
                         <div className="form-grid-cell ">
-                            <label htmlFor="phoneNumber">Numero de tlf</label>
+                            <label htmlFor="cellphone">Numero de tlf</label>
                             <Field
 								type="text" 
-								id="phoneNumber" 
-								name="phoneNumber" 
+								id="cellphone" 
+								name="cellphone" 
 								placeholder="" 
 							/>
-                            <ErrorMessage name="phoneNumber" component={() => (<div className="error">{errors.phoneNumber}</div>)}/>
+                            <ErrorMessage name="cellphone" component={() => (<div className="error">{errors.cellphone}</div>)}/>
                         </div>
 
                         <div className="form-grid-cell ">

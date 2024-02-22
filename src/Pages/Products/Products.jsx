@@ -1,7 +1,7 @@
 import React from 'react';
 import NavLogin from '../../components/Inicio-Nav/Inicio-nav';
 import CakeList from '../../components/CakeList/CakeList';
-import './Products.css';
+// import './Products.css';
 
 const Products = () => {
     return (
