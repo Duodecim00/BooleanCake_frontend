@@ -124,3 +124,46 @@
 	padding-top: 20px;
 	color: #02a802;
 }
+
+
+/*Responsive Design*/
+
+@media (max-width: 768px) {
+    .component-container_reg {
+      padding: 40px 50px;
+      width: 100%;
+    }
+  
+    .form-container_reg {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(8, 1fr);
+      width: 90%;
+    }
+  
+    .form-grid-cell input {
+      width: 100%;
+    }
+  
+    .btn-submit_reg {
+      width: 60%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .component-container_reg {
+      padding: 20px;
+    }
+  
+    .form-container_reg {
+      width: 100%;
+    }
+  
+    .form-grid-cell input {
+      font-size: 16px;
+    }
+  
+    .btn-submit_reg {
+      font-size: 28px;
+      width: 80%;
+    }
+  }
