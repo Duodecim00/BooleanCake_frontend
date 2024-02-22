@@ -11,8 +11,6 @@ function registerPost(data) {
     .catch((err) => console.log(err));
 }
 
-
-
 export {
     registerPost,
 }
