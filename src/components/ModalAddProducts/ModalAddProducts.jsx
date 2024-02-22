@@ -51,7 +51,6 @@ const PostModal = () => {
                     price: 0,
                     expireDate:'',
                     category:'',
-                    password:''
                     }}
                     // validate={(values)=>{
                     //     let errors = {}
