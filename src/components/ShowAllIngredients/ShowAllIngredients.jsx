@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { deleteIngredient, getAllIngredient,  } from '../../Routes/ingredients.routes';
+import { deleteIngredient, getAllIngredient, updateIngredient } from '../../Routes/ingredients.routes';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 function ShowIngredient() {
@@ -73,10 +73,10 @@ function ShowIngredient() {
                 <div>
                 <Formik
                         initialValues={{
-                            stock: 0,
-                            price: 0,
-                            name:'',
-                            unitMeasure:'',
+                            stock: data.stock,
+                            price: data.price,
+                            name: data.name,
+                            unitMeasure: data.unitMeasure,
                             }}
                             // validate={(values)=>{
                             //     let errors = {}
@@ -94,14 +94,14 @@ function ShowIngredient() {
                             //     // }
 
                             // }}
-                            // onSubmit={(values, {resetForm})=>{
-                                // console.log(values);
-                                // createProductsPost(values);
+                            onSubmit={(values, {resetForm})=>{
+                                console.log(values);
+                                updateIngredient(values)
                                 // handleCloseModal();
-                                // resetForm();
+                                resetForm();
                                 // cambiarFormularioEnviado(true);
                                 // setTimeout(() => cambiarFormularioEnviado(false), 5000);
-                            // }}
+                            }}
                     >
                     {({errors}) => (
                         <Form className="container-form-grid_products">
@@ -145,7 +145,7 @@ function ShowIngredient() {
                                     <button className='modal-products-submit' type="submit">
                                         Subir
                                     </button>
-                                    
+                                    <button className="modal-products-submit" onClick={handleCancel}>Cancelar</button>
                         </Form>
                     )}  
                     </Formik>
