@@ -24,19 +24,24 @@
   }
   
   .add-cake-button {
-    padding: 12px 20px;
-    background-color: #333; /* Dark gray color */
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
-    text-transform: uppercase; /* Make the text uppercase */
-    letter-spacing: 1px; /* Increase spacing between letters */
-    display: block; /* Make the button a block element */
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #FDAB4A;
+    font-family: "Inter", sans-serif;
+    border: 1px solid #FFFFFF;
+    font-weight: 700;
+    font-size: 24px;
     width: 100%;
-    box-sizing: border-box; /* Include padding and border in the element's width and height */
+    border-radius: 25px;
+    padding: 30px 50px;
+    cursor: pointer;
+
+    &:hover{
+    border: 1px solid #FDAB4A;
+    color: #FDAB4A;
+    background-color: #FFFFFF;
+    transition: .5s;
+    }
   }
   
   .option-button{

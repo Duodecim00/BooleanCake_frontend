@@ -9,7 +9,7 @@ function LogForm(){
     return(
         <>
             <div className="component-container_log" >
-                <h2 className="form-tittle_log">Bienveido/a de vuelta!</h2>
+                <h2 className="form-tittle_log">Bienvenido/a de vuelta!</h2>
                  <Formik 
                     initialValues={{
                         email:'',
