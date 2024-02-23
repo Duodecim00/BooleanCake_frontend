@@ -1,16 +1,10 @@
 import { useState } from 'react';
-import { createProductsPost } from '../../Routes/products.routes';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
-import './ModalAddProducts.css'
+import { createIngredient } from '../../Routes/ingredients.routes';
+import './ModalAddIngredients.css'
 
-const PostModal = () => {
+const ModalIngredient = () => {
   const [isOpen, setIsOpen] = useState(false);
-//   const [post, setPost] = useState({
-//     precio: 0,
-//     nombre: '',
-//     stock: 0,
-//     fecha: ''
-//   });
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -51,11 +45,10 @@ const PostModal = () => {
 
             <Formik
                 initialValues={{
-                    storage: 0,
+                    stock: 0,
                     price: 0,
                     name:'',
-                    expireDate:'',
-                    category:'',
+                    unitMeasure:''
                     }}
                     // validate={(values)=>{
                     //     let errors = {}
@@ -75,7 +68,7 @@ const PostModal = () => {
                     // }}
                     onSubmit={(values, {resetForm})=>{
                         console.log(values);
-                        createProductsPost(values);
+                        createIngredient(values);
                         handleCloseModal();
                         resetForm();
                         // cambiarFormularioEnviado(true);
@@ -88,9 +81,18 @@ const PostModal = () => {
                             <div className="form-grid-cell form-grid-cell-big">
                                 <label htmlFor="name">Nombre</label>
                                 <Field
-                                type="name"
+                                type="text"
                                 id="name"
                                 name="name"
+                                placeholder=""
+                                />
+                            </div>
+                            <div className="form-grid-cell form-grid-cell-big">
+                                <label htmlFor="unitMeasure">Unidad de medida</label>
+                                <Field
+                                type="text"
+                                id="unitMeasure"
+                                name="unitMeasure"
                                 placeholder=""
                                 />
                             </div>
@@ -102,38 +104,19 @@ const PostModal = () => {
                                     name="price"
                                     placeholder=""
                                 />
-                            </div>
+                            </div>                                                        
                             <div className="form-grid-cell aparence-disable">
-                                <label htmlFor="expireDate">Fecha de expiracion</label>
-                                <Field
-                                    type="date"
-                                    id="expireDate"
-                                    name="expireDate"
-                                    placeholder=""
-                                />
-                            </div>
-                            <div className="form-grid-cell aparence-disable">
-                                <label htmlFor="expireDate">Categoria</label>
-                                <Field
-                                    type="category"
-                                    id="category"
-                                    name="category"
-                                    placeholder=""
-                                />
-                            </div>
-                            
-                            <div className="form-grid-cell aparence-disable">
-                                <label htmlFor="storage">Almacenamiento</label>
+                                <label htmlFor="stock">Almacenamiento</label>
                                 <Field
                                     type="number"
-                                    id="storage"
-                                    name="storage"
+                                    id="stock"
+                                    name="stock"
                                     placeholder=""
                                 />
                                 {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
                             </div>
                             <button className='modal-products-submit' type="submit">
-                                Subir
+                                Subir Ingrediente
                             </button>
                             
                 </Form>
@@ -147,7 +130,7 @@ const PostModal = () => {
   );
 };
 
-export default PostModal;
+export default ModalIngredient;
 
 
 
