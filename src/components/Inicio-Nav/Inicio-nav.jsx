@@ -14,7 +14,9 @@ function NavLogin() {
           <Link to="/products">
             <h2 className="nav-btn">Productos</h2>
           </Link>
+          <Link to="/adminInventory">
           <h2 className="nav-btn">Contacto</h2>
+          </Link>
         </section>
         <section>
           <Link to="/login" className="nav-btn_login">Cuenta</Link>

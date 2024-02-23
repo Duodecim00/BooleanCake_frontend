@@ -20,9 +20,10 @@ function deleteIngredient(id) {
 }
 
 function updateIngredient(id) {
-    axios.put(`${apiLocalURL}/`, id)
+    
+    axios.put(`${apiLocalURL}/updateIngredient/${id._id}`, id)
     .then((res) => {
-        console.log(`Deleted product with id ${id}`);
+        console.log(`updated product with id ${id}`);
         console.log(res.data);
     })
     .catch((err) => console.log(err));
