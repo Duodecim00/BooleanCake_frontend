@@ -47,19 +47,20 @@
 
 .btn-leer{
     text-decoration: none;
-    color: #FDAB4A;
+    color: #FFFFFF;
+    background-color: #FDAB4A;
     font-family: "Inter", sans-serif;
-    border: 1px solid #FDAB4A;
+    border: 1px solid #FFFFFF;
     font-weight: 700;
     font-size: 24px;
     border-radius: 25px;
     padding: 30px 50px;
-    margin-top: 40px;
     cursor: pointer;
-}
 
-.btn-leer:hover{
-    color: #FFFFFF;
-    background-color: #FDAB4A;
+    &:hover{
+    border: 1px solid #FDAB4A;
+    color: #FDAB4A;
+    background-color: #FFFFFF;
     transition: .5s;
+    }
 }

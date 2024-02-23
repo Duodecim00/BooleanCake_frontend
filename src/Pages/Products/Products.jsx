@@ -11,7 +11,7 @@ const Products = () => {
         <NavLogin/>
         <h1 className="products-title">Productos</h1>
         <CakeList/>
-<PostModal></PostModal>
+        <PostModal></PostModal>
       </div>
     );
   };
