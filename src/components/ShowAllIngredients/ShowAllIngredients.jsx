@@ -134,29 +134,3 @@ function ShowIngredient() {
 }
 
 export default ShowIngredient;
-
-{/* <div className="modal">
-    <div className="modal-content">
-      <h2>Editar Item</h2>
-      <label>
-        Nombre:
-        <input
-          type="text"
-          name="nombre"
-          value={editedItem.nombre}
-          onChange={handleInputChange}
-        />
-      </label>
-      <label>
-        Descripción:
-        <input
-          type="text"
-          name="descripcion"
-          value={editedItem.descripcion}
-          onChange={handleInputChange}
-        />
-      </label>
-      <button onClick={handleSave}>Guardar</button>
-      <button onClick={handleCancel}>Cancelar</button>
-    </div>
-  {/*</div> */}

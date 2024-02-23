@@ -1,11 +1,12 @@
 import { useState } from "react";
+// import {useHistory} from 'react-router-dom';
 import './LogForm.css'
 import {Link} from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginPost } from "../../Routes/user.routes";
 function LogForm(){
     const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
-
+    // const history = useHistory();
     return(
         <>
             <div className="component-container_log" >
@@ -32,11 +33,14 @@ function LogForm(){
 
                  }}
                  onSubmit={(values, {resetForm})=>{
-                    loginPost(values);
-                    console.log('Formulario enviado');
-                    resetForm();
-                    cambiarFormularioEnviado(true);
-                    setTimeout(() => cambiarFormularioEnviado(false), 5000);
+                    try{
+                        loginPost(values);
+                        resetForm();
+                        alert('Login Successful');
+                    }
+                    catch(e){
+                        console.log(e);
+                    }
                  }}
                  >
                 {({errors}) => (
