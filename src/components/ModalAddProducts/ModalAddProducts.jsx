@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createProductsPost } from '../../Routes/products.routes';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
+import './ModalAddProducts.css'
 
 const PostModal = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,13 +38,16 @@ const PostModal = () => {
 //   };
 
   return (
-    <div>
-      <button onClick={handleOpenModal}>Crear Post</button>
+    <div className='container-component-products'>
+      <button className='insert-products-btn' onClick={handleOpenModal}>Subir Producto</button>
 
       {isOpen && (
-        <div className="modal">
+        <div className="modal" id='popup'>
           <div className="modal-content">
-            <h2>Crear Post</h2>
+            <nav className='navbar-modal-product'>
+              <h2 className='modal-product-tittle'>Subir Producto</h2>
+              <button className='modal-products-exit-btn' onClick={handleCloseModal}>X</button>
+            </nav>
 
             <Formik
                 initialValues={{
@@ -78,10 +82,47 @@ const PostModal = () => {
                     }}
             >
              {({errors}) => (
-                <Form className="container-form-grid_log">
+                <Form className="container-form-grid_products">
 
-                            <div>
-                                <label htmlFor="storage">Almacenamiento:</label>
+                            <div className="form-grid-cell form-grid-cell-big">
+                                <label htmlFor="name">Nombre</label>
+                                <Field
+                                type="name"
+                                id="name"
+                                name="name"
+                                placeholder=""
+                                />
+                            </div>
+                            <div className="form-grid-cell aparence-disable">
+                                <label htmlFor="price">Precio</label>
+                                <Field
+                                    type="number"
+                                    id="price"
+                                    name="price"
+                                    placeholder=""
+                                />
+                            </div>
+                            <div className="form-grid-cell aparence-disable">
+                                <label htmlFor="expireDate">Fecha de expiracion</label>
+                                <Field
+                                    type="date"
+                                    id="expireDate"
+                                    name="expireDate"
+                                    placeholder=""
+                                />
+                            </div>
+                            <div className="form-grid-cell aparence-disable">
+                                <label htmlFor="expireDate">Categoria</label>
+                                <Field
+                                    type="category"
+                                    id="category"
+                                    name="category"
+                                    placeholder=""
+                                />
+                            </div>
+                            
+                            <div className="form-grid-cell aparence-disable">
+                                <label htmlFor="storage">Almacenamiento</label>
                                 <Field
                                     type="number"
                                     id="storage"
@@ -90,39 +131,10 @@ const PostModal = () => {
                                 />
                                 {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
                             </div>
-                            <div>
-                                <label htmlFor="price">Precio:</label>
-                                <Field
-                                    type="number"
-                                    id="price"
-                                    name="price"
-                                    placeholder=""
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="expireDate">Fecha de expiracion:</label>
-                                <Field
-                                    type="date"
-                                    id="expireDate"
-                                    name="expireDate"
-                                    placeholder=""
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="category">Nombre:</label>
-                                <Field
-                                type="category"
-                                id="category"
-                                name="category"
-                                placeholder=""
-                                />
-                            </div>
-                            <button type="submit">
-                                Subir, brr
+                            <button className='modal-products-submit' type="submit">
+                                Subir
                             </button>
-                            <button type="button" onClick={handleCloseModal}>
-                                Cancelar
-                            </button>
+                            
                 </Form>
              )}
             

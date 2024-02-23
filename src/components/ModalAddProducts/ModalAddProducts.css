@@ -1,0 +1,122 @@
+.insert-products-btn{
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #FDAB4A;
+    font-family: "Inter", sans-serif;
+    border: 1px solid #FFFFFF;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 25px;
+    padding: 30px 50px;
+    cursor: pointer;
+
+    &:hover{
+    border: 1px solid #FDAB4A;
+    color: #FDAB4A;
+    background-color: #FFFFFF;
+    transition: .5s;
+    }
+
+}
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.navbar-modal-product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-product-tittle{
+    font-family: "Rozha One", serif;
+    color:#FDAB4A;
+    font-weight: 400;
+    font-size: 54px;
+    margin: 0;
+}
+
+
+.container-component-products{
+    display: flex;
+    justify-content: center;
+
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.modal-content{
+    border: solid 5px #FDAB4A;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 50%;
+    min-height: 50%;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+}
+.container-form-grid_products{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    width: 100%;
+    height: 50vh;
+}
+
+.modal-products-submit{
+    grid-column: 1/3;
+}
+
+.modal-products-submit{
+    margin-top: 20px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #FDAB4A;
+    font-family: "Inter", sans-serif;
+    border: 1px solid #FFFFFF;
+    font-weight: 700;
+    font-size: 24px;
+    height: 100%;
+    border-radius: 25px;
+    cursor: pointer;
+
+    &:hover{
+    border: 1px solid #FDAB4A;
+    color: #FDAB4A;
+    background-color: #FFFFFF;
+    transition: .5s;
+    }
+}
+
+.modal-products-exit-btn{
+    text-decoration: none;
+    color: #000000;
+    background-color: #FF0000;
+    font-family: "Inter", sans-serif;
+    border: 1px solid #FFFFFF;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 15px;
+    padding: 15px 25px;
+    cursor: pointer;
+
+    &:hover{
+    border: 1px solid #FF0000;
+    color: #FF0000;
+    background-color: #000000;
+    transition: .5s;
+    }
+}
