@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+import { getAllProducts, deleteProduct } from '../../Routes/products.routes';
+import './ShowAllProducts.css'
+
 import { getAllProducts, deleteProduct, updateProduct } from '../../Routes/products.routes';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-
+import './ShowAllProducts.css'
 
 function ShowProducts() {
   const [data, setData] = useState([]);
@@ -39,19 +42,34 @@ function ShowProducts() {
 };
 
   return (
-        <div>
+        <div className='cuadro'>
       {Array.isArray(data) ? (
         data.map((item) => (
-          <div key={item._id}>
-            <h2>{item.name}</h2>
-            <p>Category: {item.category}</p>
-            <p>Price: {item.price}</p>
-            <p>Stock: {item.storage}</p>
-            <p>Fecha de vencimiento: {item.expireDate}</p>
-            <img src={item.image} alt={item.name} />
-            <button onClick={() => handleEdit(item)}>Editar</button>
-            <button onClick={() => handleDelete(item._id)}>Borrar</button>
-          </div>
+          <div  key={item._id}>
+            <div className='slide'>
+
+              <div className='block'>
+               <p>{item.name}</p> 
+              </div>
+
+              <div className='block'>
+                <p>Category: {item.category}</p>
+              </div>
+              <div className='block'>
+                <p >Price: {item.price}</p>
+              </div>
+              <div className='block'>
+                 <p >Stock: {item.storage}</p>
+              </div>
+              <div className='block'>
+                <p >Fecha de vencimiento: {item.expireDate}</p>
+              </div>
+              <div className='block'>
+
+                          <div className='sample'>
+                <img src={item.image} alt={item.name} />
+              </div>
+            </div>
         ))
       ) : (
         <p>No hay datos disponibles</p>
