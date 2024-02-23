@@ -1,5 +1,5 @@
-import React, {useState} from "react";
 import './RegForm.css';
+import { useState } from 'react';
 import {Link} from "react-router-dom";
 import { registerPost } from "../../Routes/user.routes";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -16,6 +16,7 @@ function RegForm(){
                         name:'',
                         lastname:'',
                         email:'',
+                        select:'',
                         cellphone:'',
                         password:'',
                         confirmPass:''
@@ -47,11 +48,21 @@ function RegForm(){
                         }
 
                         //Validar numeros de telefono
+                        if(!values.select || values.select== undefined){
+                            errors.select = 'Selecciona un codigo'
+                        } 
+                        // else if(!/^\d{7}$/.test(values.cellphone)){
+                        //     errors.select = 'El numero de telefono solo puede contener numeros y el simbolo de +.'
+                        // }
+                        //Validar numeros de telefono
                         if(!values.cellphone){
                             errors.cellphone = 'Por favor ingresa un numero valido'
-                        } else if(!/^0412\d{7}$/.test(values.cellphone)){
-                            errors.cellphone = 'El numero de telefono solo puede contener numeros y el simbolo de +.'
+                        } else if(!/^\d{7}$/.test(values.cellphone)){
+                            errors.cellphone = 'El numero de tlf debe tener 7 digitos.'
                         }
+                       // } //else if(!/^0412\d{7}$/.test(values.cellphone)){
+                            //errors.cellphone = 'El numero de telefono solo puede contener numeros y el simbolo de +.'
+                        // }//
                         //Validar contraseñas
                         if(!values.password){
                             errors.password = 'Por favor ingresa una contraseña'
@@ -71,8 +82,17 @@ function RegForm(){
 
                     }}
                     onSubmit={(values,{resetForm}) => {
-                        registerPost(values);
-                        console.log(values);
+                        const data = {
+                            name:values.name,
+                            lastname:values.lastname,
+                            email:values.email,
+                            cellphone:`${values.select}${values.cellphone}`,
+                            password:values.password
+                        }
+                        
+                        registerPost(data);
+                        console.log('hola soy el data:');
+                        console.log(data);
                         resetForm();
                         cambiarFormularioEnviado(true);
                         setTimeout(() => cambiarFormularioEnviado(false), 5000);
@@ -106,13 +126,24 @@ function RegForm(){
                         </div>
 
                         <div className="form-grid-cell ">
-                            <label htmlFor="cellphone">Numero de tlf</label>
+                                <label htmlFor="cellphone">Numero de tlf</label>
+                            <div className="select-container">
+                                <Field as="select" id="option" name="select">
+                                    <option value="">Seleccione</option>
+                                    <option value="0424">0424</option>
+                                    <option value="0414">0414</option>
+                                    <option value="0412">0412</option>
+                                    <option value="0416">0416</option>
+                                    <option value="0426">0426</option>
+                                </Field>
+                            </div>
                             <Field
-								type="text" 
+								type="number" 
 								id="cellphone" 
 								name="cellphone" 
 								placeholder="" 
 							/>
+                            <ErrorMessage name="select" component={() => (<div className="error">{errors.select}</div>)}/>
                             <ErrorMessage name="cellphone" component={() => (<div className="error">{errors.cellphone}</div>)}/>
                         </div>
 
