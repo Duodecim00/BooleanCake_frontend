@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import './LogForm.css'
 import {Link} from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";

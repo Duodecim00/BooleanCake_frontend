@@ -3,57 +3,40 @@ import { deleteIngredient, getAllIngredient, updateIngredient } from '../../Rout
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 function ShowIngredient() {
-  const [data, setData] = useState([]);
-//   const [itemz, setItems] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [editedItem, setEditedItem] = useState({});
-  const [editModalOpen, setEditModalOpen] = useState(false);
-  useEffect(() => {
-    // Lógica para obtener los datos de la API y almacenarlos en el estado 'data'
-    fetchData();
-  }, []);
+    const [data, setData] = useState([]);
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [editedItem, setEditedItem] = useState({});
+    const [editModalOpen, setEditModalOpen] = useState(false);
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-  const fetchData = async () => {
-    try {
-        const ingredients = await getAllIngredient();
-        console.log(ingredients);
-        setData(ingredients.data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
+    const fetchData = async () => {
+        try {
+            const ingredients = await getAllIngredient();
+            console.log(ingredients);
+            setData(ingredients.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
-  const handleEdit = (id) => {
-    // Lógica para editar el elemento con el ID proporcionado
-    setSelectedItem(id);
-    setEditedItem({ ...id });
-    setEditModalOpen(true);
-  };
-  const handleSave = () => {
-    // Lógica para guardar los cambios del item editado en la API
-    // axios.put(`API_URL/${selectedItem.id}`, editedItem)
-    //   .then((response) => {
-    //     const updatedItems = items.map((item) =>
-    //       item.id === selectedItem.id ? response.data : item
-    //     );
-    //     setItems(updatedItems);
-    //     setEditModalOpen(false);
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error updating item:', error);
-    //   });
-    console.log('Aqui intentando guardarte los datos papu, dont worry');
-  };
+    const handleEdit = (id) => {
+        // Lógica para editar el elemento con el ID proporcionado
+        setSelectedItem(id);
+        setEditedItem({ ...id });
+        setEditModalOpen(true);
+    };
 
-  const handleCancel = () => {
-    setEditModalOpen(false);
-  };
+    const handleCancel = () => {
+        setEditModalOpen(false);
+    };
 
-  const handleDelete = (id) => {
+    const handleDelete = (id) => {
         deleteIngredient(id);
-  };
+    };
 
-  return (
+    return (
         <div>
             {Array.isArray(data) ? (
                 data.map((item) => (
@@ -69,15 +52,10 @@ function ShowIngredient() {
             ) : (
                 <p>No hay datos disponibles</p>
             )}
-            {editModalOpen && (
+            {selectedItem && editModalOpen && (
                 <div>
                 <Formik
-                        initialValues={{
-                            stock: data.stock,
-                            price: data.price,
-                            name: data.name,
-                            unitMeasure: data.unitMeasure,
-                            }}
+                        initialValues={selectedItem}
                             // validate={(values)=>{
                             //     let errors = {}
                             //     //Validacion de email
@@ -92,13 +70,13 @@ function ShowIngredient() {
                             //     // } else if(!/^(?=.*\W).{8,}$/.test(values.password)){
                             //     //     errors.password = 'La contraseña debe contener 8 caracteres o mas y minimo un caracter especial'
                             //     // }
-
                             // }}
                             onSubmit={(values, {resetForm})=>{
                                 console.log(values);
                                 updateIngredient(values)
                                 // handleCloseModal();
                                 resetForm();
+                                handleCancel();
                                 // cambiarFormularioEnviado(true);
                                 // setTimeout(() => cambiarFormularioEnviado(false), 5000);
                             }}
@@ -153,10 +131,11 @@ function ShowIngredient() {
             )}
         </div>
     );
-};
+}
 
 export default ShowIngredient;
-  {/* <div className="modal">
+
+{/* <div className="modal">
     <div className="modal-content">
       <h2>Editar Item</h2>
       <label>
