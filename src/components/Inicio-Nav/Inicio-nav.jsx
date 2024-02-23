@@ -1,4 +1,3 @@
-import React from "react";
 import './Inicio-nav.css';
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
@@ -9,8 +8,12 @@ function NavLogin() {
       <NavContainer className="nav-container">
         <h1 className="nav-titulo">ButterCream!</h1>
         <section className="container">
-          <h2 className="nav-btn selected">Inicio</h2>
-          <h2 className="nav-btn">Productos</h2>
+          <Link to="/">
+            <h2 className="nav-btn selected">Inicio</h2>
+          </Link>
+          <Link to="/products">
+            <h2 className="nav-btn">Productos</h2>
+          </Link>
           <h2 className="nav-btn">Contacto</h2>
         </section>
         <section>
