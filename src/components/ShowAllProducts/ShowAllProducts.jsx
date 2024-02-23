@@ -61,7 +61,7 @@ function ShowProducts() {
                                             <p >Fecha de vencimiento: {item.expireDate}</p>
                                         </div>
                                         <div className='block'>
-                                                            <button className='btnoption' onClick={() => handleEdit(item)}>Editar</button>
+                                            <button className='btnoption' onClick={() => handleEdit(item)}>Editar</button>
               <button className='btnoption' onClick={() => handleDelete(item._id)}>Borrar</button>
               </div>
                                         <div className='block'>
