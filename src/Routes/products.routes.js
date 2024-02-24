@@ -25,7 +25,7 @@ function deleteProduct(id) {
 
 function updateProduct(id) {
     console.log(id);
-    axios.put(`${apiLocalURL}/update`, id)
+    axios.put(`${apiLocalURL}/update/${id._id}`, id)
     .then((res) => {
         console.log(`update product with id ${id}`);
         console.log(res.data);
