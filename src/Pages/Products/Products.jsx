@@ -9,7 +9,6 @@ const Products = () => {
       
       <div className="products-container">
         <NavLogin/>
-        <h1 className="products-title">Productos</h1>
         <ShowProducts/>
         <PostModal/>
       </div>

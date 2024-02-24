@@ -40,7 +40,8 @@ function ShowProducts() {
 };
 
   return (
-        <div className='cuadro'>
+        <div className='container-admin-view'>
+            <h1>Productos</h1>
                             {Array.isArray(data) ? (
                                 data.map((item) => (
                                 <div  key={item._id}>
@@ -61,7 +62,7 @@ function ShowProducts() {
                                             <p >Fecha de vencimiento: {item.expireDate}</p>
                                         </div>
                                         <div className='block'>
-                                                            <button className='btnoption' onClick={() => handleEdit(item)}>Editar</button>
+                                            <button className='btnoption' onClick={() => handleEdit(item)}>Editar</button>
               <button className='btnoption' onClick={() => handleDelete(item._id)}>Borrar</button>
               </div>
                                         <div className='block'>

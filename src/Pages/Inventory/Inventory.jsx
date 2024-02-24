@@ -9,7 +9,6 @@ function Inventory(){
         <>
         <div className="products-container">
             <NavLogin/>
-            <h1 className="products-title">Ingredientes</h1>
             {/* <IngreList/> */}
             <ShowIngredient/>
             <ModalIngredient/>
