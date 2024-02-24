@@ -66,7 +66,11 @@ function ShowIngredient() {
                 <p>No hay datos disponibles</p>
             )}
             {selectedItem && editModalOpen && (
-                <div>
+                
+                <div className='backdrop'>
+                
+                                        <div className='form_container'>
+
                 <Formik
                         initialValues={selectedItem}
                             // validate={(values)=>{
@@ -140,6 +144,7 @@ function ShowIngredient() {
                         </Form>
                     )}  
                     </Formik>
+                </div>
                 </div>
             )}
         </div>
