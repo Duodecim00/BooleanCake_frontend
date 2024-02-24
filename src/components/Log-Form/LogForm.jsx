@@ -4,9 +4,15 @@ import './LogForm.css'
 import {Link} from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginPost } from "../../Routes/user.routes";
+// import { useHistory } from 'react-router-dom';
 function LogForm(){
+    // const history = useHistory();
     const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
     // const history = useHistory();
+
+    const handleRedirect = () => {
+        history.push('/');
+      }
     return(
         <>
             <div className="component-container_log" >
@@ -37,6 +43,7 @@ function LogForm(){
                         loginPost(values);
                         resetForm();
                         alert('Login Successful');
+                        // handleRedirect();
                     }
                     catch(e){
                         console.log(e);

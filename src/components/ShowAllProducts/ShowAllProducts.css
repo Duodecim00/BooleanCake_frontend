@@ -18,11 +18,12 @@
   z-index: 9999; /* Ase*/
 }
 .form_container{
-    
+
 }
 
 .slide{
     display: flex;
+    width: 80%;
     flex-direction: row;
     margin-bottom: 15px;
 
@@ -31,7 +32,7 @@
 .block{
     display: flex;
     flex-direction: row;
-    margin-left: 25px;
+    padding-left: 25px;
     font-weight: bold;
     background: none;
     width: 180px;
