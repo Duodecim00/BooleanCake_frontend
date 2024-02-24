@@ -16,6 +16,7 @@
     font-size: 48px;
     text-decoration: none;
     color: #FDAB4A;
+    user-select: none;
 }
 
 .container{
@@ -24,24 +25,15 @@
 }
 
 .nav-btn{
-    font-weight: 600px;
+    font-weight: 700;
     font-size: 24px;
     color: #000000;
     text-decoration: none;
     margin: 30px;
     cursor: pointer;
-
- 
 }
 
-.nav-btn:hover{
-    text-decoration: underline ;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 4px;
-    text-decoration-color: #FDAB4A;
-    
-    transition: color 0.3s ease-in-out;
-}
+.nav-btn:hover
 
 .nav-btn_login{
     font-weight: 600px;
@@ -67,4 +59,8 @@
     text-decoration-thickness: 2.5px;
     text-underline-offset: 3px;
     text-decoration-color: #FDAB4A;
+}
+
+.text-decoration{
+    text-decoration: none;
 }

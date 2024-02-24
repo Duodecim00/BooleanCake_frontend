@@ -62,11 +62,12 @@ function ShowProducts() {
                                             <p >Fecha de vencimiento: {item.expireDate}</p>
                                         </div>
                                         <div className='block'>
-                                            <button className='btnoption' onClick={() => handleEdit(item)}>Editar</button>
-              <button className='btnoption' onClick={() => handleDelete(item._id)}>Borrar</button>
-              </div>
+                                            <button className='btnoption' onClick={() => handleEdit(item)}>
+                                                <span class="material-symbols-outlined">edit</span>
+                                            </button>
+                                            <button className='btnoption' onClick={() => handleDelete(item._id)}>Borrar</button>
+                                        </div>
                                         <div className='block'>
-
                                                     <div className='sample'>
                                             <img src={item.image} alt={item.name} />
                                         </div>
