@@ -40,7 +40,8 @@ function ShowProducts() {
 };
 
   return (
-        <div className='cuadro'>
+        <div className='container-admin-view'>
+            <h1>Productos</h1>
                             {Array.isArray(data) ? (
                                 data.map((item) => (
                                 <div  key={item._id}>

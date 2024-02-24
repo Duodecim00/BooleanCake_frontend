@@ -37,16 +37,29 @@ function ShowIngredient() {
     };
 
     return (
-        <div>
+        <div className='container-admin-view'>
+            <h1>Ingredientes</h1>
             {Array.isArray(data) ? (
                 data.map((item) => (
-                <div className="item_container" key={item._id}>
-                    <h2>{item.name}</h2>
-                    <p>Price: {item.price}</p>
-                    <p>Stock: {item.stock}</p>
-                    <p>Unidad de medida: {item.unitMeasure}</p>
-                    <button onClick={() => handleEdit(item) }>Editar</button>
-                    <button onClick={() => handleDelete(item._id)}>Borrar</button>
+                <div key={item._id}>
+                    <div className='slide'>
+                        <div className='block'>
+                            <p>{item.name}</p>
+                        </div>
+                        <div className='block'>
+                            <p>Price: {item.price}</p>
+                        </div>
+                        <div className='block'>
+                            <p>Stock: {item.stock}</p>
+                        </div>
+                        <div className='block'>
+                            <p>Unidad de medida: {item.unitMeasure}</p>
+                        </div>
+                        <div className='block'>
+                            <button className='btnoption' onClick={() => handleEdit(item) }>Editar</button>
+                            <button className='btnoption' onClick={() => handleDelete(item._id)}>Borrar</button>
+                        </div>
+                    </div>
                 </div>
                 ))
             ) : (
