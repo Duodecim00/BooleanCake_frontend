@@ -1,6 +1,6 @@
-import NavLogin from '../../components/Inicio-Nav/Inicio-nav';
+import AdminNav from '../../components/AdminNav/AdminNav.jsx';
 import ModalIngredient from '../../components/ModalAddIngredients/ModalAddIngredients.jsx';
-// import IngreList from '../../components/IngreList/IngreList.jsx'
+
 import ShowIngredient from '../../components/ShowAllIngredients/ShowAllIngredients.jsx';
 
 function Inventory(){
@@ -8,8 +8,7 @@ function Inventory(){
     return(
         <>
         <div className="products-container">
-            <NavLogin/>
-            {/* <IngreList/> */}
+            <AdminNav/>
             <ShowIngredient/>
             <ModalIngredient/>
         </div>

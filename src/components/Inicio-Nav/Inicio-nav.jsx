@@ -11,10 +11,10 @@ function NavLogin() {
           <Link to="/">
             <h2 className="nav-btn selected">Inicio</h2>
           </Link>
-          <Link to="/products">
+          <Link to="/">
             <h2 className="nav-btn">Productos</h2>
           </Link>
-          <Link to="/adminInventory">
+          <Link to="/">
           <h2 className="nav-btn">Contacto</h2>
           </Link>
         </section>
