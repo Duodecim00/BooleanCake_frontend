@@ -66,8 +66,8 @@ function RegForm(){
                         //Validar contraseñas
                         if(!values.password){
                             errors.password = 'Por favor ingresa una contraseña'
-                        } //else if(!/^(?=.*\W).{8,}$/.test(values.password)){
-                          // errors.password = 'La contraseña debe contener 8 caracteres o mas y minimo un caracter especial'
+                        } else if(!/^(?=.*\W).{8,}$/.test(values.password)){
+                            errors.password = 'La contraseña debe contener 8 caracteres o mas y minimo un caracter especial'
                       // }
                       //  Validar contraseñas
                         if(!values.confirmPass){
