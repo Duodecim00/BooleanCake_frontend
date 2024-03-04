@@ -105,7 +105,7 @@ function RegForm(){
                         <div className="form-grid-cell">
                             <label htmlFor="name">Nombre</label>
                             {/* Field contiene todos los elementos handle, blur, etc. Cotenidos dentro de el */}
-                            <Field 
+                            <Field className="input-register"
 								type="text" 
 								id="name" 
 								name="name" 
@@ -116,7 +116,7 @@ function RegForm(){
 
                         <div className="form-grid-cell">
                             <label htmlFor="lastname">Apellido</label>
-                            <Field
+                            <Field  className="input-register"
 								type="text" 
 								id="lastname" 
 								name="lastname" 
@@ -125,10 +125,10 @@ function RegForm(){
 							<ErrorMessage name="lastname" component={() => (<div className="error">{errors.lastname}</div>)} />
                         </div>
 
-                        <div className="form-grid-cell ">
+                        <div className="form-grid-cell form-grid-cell-input-cellphone">
                                 <label htmlFor="cellphone">Numero de tlf</label>
                             <div className="select-container">
-                                <Field as="select" id="option" name="select">
+                                <Field className="input-cellphone-code" as="select" id="option" name="select">
                                     <option value="">Seleccione</option>
                                     <option value="0424">0424</option>
                                     <option value="0414">0414</option>
@@ -137,7 +137,7 @@ function RegForm(){
                                     <option value="0426">0426</option>
                                 </Field>
                             </div>
-                            <Field
+                            <Field className="input-cellphone"
 								type="number" 
 								id="cellphone" 
 								name="cellphone" 
@@ -149,7 +149,7 @@ function RegForm(){
 
                         <div className="form-grid-cell ">
                             <label htmlFor="email">Correo Electronico</label>
-                            <Field
+                            <Field  className="input-register"
 								type="email" 
 								id="email" 
 								name="email" 
@@ -160,7 +160,7 @@ function RegForm(){
 
                         <div className="form-grid-cell ">
                             <label htmlFor="password">Contraseña</label>
-                            <Field
+                            <Field  className="input-register"
 								type="password" 
 								id="password" 
 								name="password" 
@@ -171,7 +171,7 @@ function RegForm(){
 
                         <div className="form-grid-cell ">
                             <label htmlFor="confirmPass">Confimar contraseña</label>
-                            <Field
+                            <Field  className="input-register"
 								type="password" 
 								id="confirmPass" 
 								name="confirmPass" 
