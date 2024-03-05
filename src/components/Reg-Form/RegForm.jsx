@@ -68,7 +68,7 @@ function RegForm(){
                             errors.password = 'Por favor ingresa una contraseña'
                         } else if(!/^(?=.*\W).{8,}$/.test(values.password)){
                             errors.password = 'La contraseña debe contener 8 caracteres o mas y minimo un caracter especial'
-                      // }
+                        }
                       //  Validar contraseñas
                         if(!values.confirmPass){
                             errors.confirmPass = 'Por favor ingresa una contraseña'
@@ -105,7 +105,7 @@ function RegForm(){
                         <div className="form-grid-cell">
                             <label htmlFor="name">Nombre</label>
                             {/* Field contiene todos los elementos handle, blur, etc. Cotenidos dentro de el */}
-                            <Field className="input-register"
+                            <Field 
 								type="text" 
 								id="name" 
 								name="name" 
@@ -116,7 +116,7 @@ function RegForm(){
 
                         <div className="form-grid-cell">
                             <label htmlFor="lastname">Apellido</label>
-                            <Field  className="input-register"
+                            <Field
 								type="text" 
 								id="lastname" 
 								name="lastname" 
@@ -125,10 +125,10 @@ function RegForm(){
 							<ErrorMessage name="lastname" component={() => (<div className="error">{errors.lastname}</div>)} />
                         </div>
 
-                        <div className="form-grid-cell form-grid-cell-input-cellphone">
+                        <div className="form-grid-cell ">
                                 <label htmlFor="cellphone">Numero de tlf</label>
                             <div className="select-container">
-                                <Field className="input-cellphone-code" as="select" id="option" name="select">
+                                <Field as="select" id="option" name="select">
                                     <option value="">Seleccione</option>
                                     <option value="0424">0424</option>
                                     <option value="0414">0414</option>
@@ -137,7 +137,7 @@ function RegForm(){
                                     <option value="0426">0426</option>
                                 </Field>
                             </div>
-                            <Field className="input-cellphone"
+                            <Field
 								type="number" 
 								id="cellphone" 
 								name="cellphone" 
@@ -149,7 +149,7 @@ function RegForm(){
 
                         <div className="form-grid-cell ">
                             <label htmlFor="email">Correo Electronico</label>
-                            <Field  className="input-register"
+                            <Field
 								type="email" 
 								id="email" 
 								name="email" 
@@ -160,7 +160,7 @@ function RegForm(){
 
                         <div className="form-grid-cell ">
                             <label htmlFor="password">Contraseña</label>
-                            <Field  className="input-register"
+                            <Field
 								type="password" 
 								id="password" 
 								name="password" 
@@ -171,7 +171,7 @@ function RegForm(){
 
                         <div className="form-grid-cell ">
                             <label htmlFor="confirmPass">Confimar contraseña</label>
-                            <Field  className="input-register"
+                            <Field
 								type="password" 
 								id="confirmPass" 
 								name="confirmPass" 
