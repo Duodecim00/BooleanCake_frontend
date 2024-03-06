@@ -1,4 +1,3 @@
-import React, {useState} from "react";
 import RegBand from "../../components/Reg-Band/RegBand";
 import RegForm from "../../components/Reg-Form/RegForm";
 import styled from 'styled-components';
