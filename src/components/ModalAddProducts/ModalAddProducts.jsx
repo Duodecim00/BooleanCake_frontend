@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { createProductsPost } from '../../Routes/products.routes';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
 import './ModalAddProducts.css'
+import { uploadFile } from '../../firebase/config';
 
 const PostModal = () => {
+  const pred = 'Venezuela'
+  const [file, setFile] = useState(null)
   const [isOpen, setIsOpen] = useState(false);
 //   const [post, setPost] = useState({
 //     precio: 0,
@@ -56,6 +59,8 @@ const PostModal = () => {
                     name:'',
                     expireDate:'',
                     category:'',
+                    region: pred,
+                    image:''
                     }}
                     // validate={(values)=>{
                     //     let errors = {}
@@ -73,9 +78,13 @@ const PostModal = () => {
                     //     // }
 
                     // }}
-                    onSubmit={(values, {resetForm})=>{
-                        console.log(values);
+                    onSubmit={async (values, {resetForm})=>{
+                      try{
+                        const result = await uploadFile(file)
                         createProductsPost(values);
+                      }catch(error){
+                        console.error(error)
+                        }
                         handleCloseModal();
                         resetForm();
                         // cambiarFormularioEnviado(true);
@@ -132,6 +141,12 @@ const PostModal = () => {
                                 />
                                 {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
                             </div>
+                            
+                            <div className="form-grid-cell aparence-disable">
+                              <input type="file" name="image" id="image" onChange={e => uploadFile(e.target.files[0])}></input>
+                                {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
+                            </div>
+
                             <button className='modal-products-submit' type="submit">
                                 Subir
                             </button>
