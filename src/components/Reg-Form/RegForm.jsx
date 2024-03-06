@@ -125,27 +125,28 @@ function RegForm(){
 							<ErrorMessage name="lastname" component={() => (<div className="error">{errors.lastname}</div>)} />
                         </div>
 
-                        <div className="form-grid-cell ">
-                                <label htmlFor="cellphone">Numero de tlf</label>
-                            <div className="select-container">
-                                <Field as="select" id="option" name="select">
+                        <div className="form-grid-cell">
+                                <label htmlFor="cellphone">Número de tlf</label>
+                                <div className="phone-input-container">
+                                    <Field as="select" id="option" name="select" className="input-cellphone-code">
                                     <option value="">Seleccione</option>
                                     <option value="0424">0424</option>
                                     <option value="0414">0414</option>
                                     <option value="0412">0412</option>
                                     <option value="0416">0416</option>
                                     <option value="0426">0426</option>
-                                </Field>
-                            </div>
-                            <Field
-								type="number" 
-								id="cellphone" 
-								name="cellphone" 
-								placeholder="" 
-							/>
-                            <ErrorMessage name="select" component={() => (<div className="error">{errors.select}</div>)}/>
-                            <ErrorMessage name="cellphone" component={() => (<div className="error">{errors.cellphone}</div>)}/>
-                        </div>
+                                    </Field>
+                                    <Field
+                                    type="number" 
+                                    id="cellphone" 
+                                    name="cellphone" 
+                                    placeholder="" 
+                                    className="input-cellphone"
+                                    />
+                                </div>
+                                <ErrorMessage name="select" component={() => (<div className="error">{errors.select}</div>)}/>
+                                <ErrorMessage name="cellphone" component={() => (<div className="error">{errors.cellphone}</div>)}/>
+                                </div>
 
                         <div className="form-grid-cell ">
                             <label htmlFor="email">Correo Electronico</label>
