@@ -106,6 +106,7 @@ function RegForm(){
                             <label htmlFor="name">Nombre</label>
                             {/* Field contiene todos los elementos handle, blur, etc. Cotenidos dentro de el */}
                             <Field 
+                                className="input-register"
 								type="text" 
 								id="name" 
 								name="name" 
@@ -117,6 +118,7 @@ function RegForm(){
                         <div className="form-grid-cell">
                             <label htmlFor="lastname">Apellido</label>
                             <Field
+                                className="input-register"
 								type="text" 
 								id="lastname" 
 								name="lastname" 
@@ -128,29 +130,30 @@ function RegForm(){
                         <div className="form-grid-cell">
                                 <label htmlFor="cellphone">Número de tlf</label>
                                 <div className="phone-input-container">
-                                    <Field as="select" id="option" name="select" className="input-cellphone-code">
-                                    <option value="">Seleccione</option>
-                                    <option value="0424">0424</option>
-                                    <option value="0414">0414</option>
-                                    <option value="0412">0412</option>
-                                    <option value="0416">0416</option>
-                                    <option value="0426">0426</option>
+                                    <Field as="select" id="option" name="select" className="input-register cellphonecode-input_reg">
+                                        <option value="">Seleccione</option>
+                                        <option value="0424">0424</option>
+                                        <option value="0414">0414</option>
+                                        <option value="0412">0412</option>
+                                        <option value="0416">0416</option>
+                                        <option value="0426">0426</option>
                                     </Field>
                                     <Field
-                                    type="number" 
-                                    id="cellphone" 
-                                    name="cellphone" 
-                                    placeholder="" 
-                                    className="input-cellphone"
+                                        type="number" 
+                                        id="cellphone" 
+                                        name="cellphone" 
+                                        placeholder="" 
+                                        className="input-register cellphone-input_reg"
                                     />
                                 </div>
                                 <ErrorMessage name="select" component={() => (<div className="error">{errors.select}</div>)}/>
                                 <ErrorMessage name="cellphone" component={() => (<div className="error">{errors.cellphone}</div>)}/>
-                                </div>
+                            </div>
 
                         <div className="form-grid-cell ">
                             <label htmlFor="email">Correo Electronico</label>
                             <Field
+                                className="input-register"
 								type="email" 
 								id="email" 
 								name="email" 
@@ -162,6 +165,7 @@ function RegForm(){
                         <div className="form-grid-cell ">
                             <label htmlFor="password">Contraseña</label>
                             <Field
+                                className="input-register"
 								type="password" 
 								id="password" 
 								name="password" 
@@ -173,6 +177,7 @@ function RegForm(){
                         <div className="form-grid-cell ">
                             <label htmlFor="confirmPass">Confimar contraseña</label>
                             <Field
+                                className="input-register"
 								type="password" 
 								id="confirmPass" 
 								name="confirmPass" 
