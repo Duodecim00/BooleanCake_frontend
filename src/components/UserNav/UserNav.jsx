@@ -1,7 +1,7 @@
 import './UserNav.css';
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
-
+import RegionSelector from '../RegionSelector/RegionSelector';
 
 function NavLogin() {
     return (
@@ -13,6 +13,9 @@ function NavLogin() {
           <Link className="nav-btn" to="/">Productos</Link>
           <Link className="nav-btn" to="/">Contacto</Link>
 
+        </section>
+        <section>
+          <RegionSelector/>
         </section>
         <section>
           <Link to="/login" className="nav-btn_login">Iniciar Sesion</Link>

@@ -1,6 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import './AdminNav.css'
+import RegionSelector from "../RegionSelector/RegionSelector";
 
 function AdminNav(){
     return(
@@ -16,6 +16,9 @@ function AdminNav(){
                 <Link><span class="material-symbols-outlined">search</span></Link>
                 <Link><span class="material-symbols-outlined">person</span></Link>
                 <Link><span class="material-symbols-outlined">grid_view</span></Link>
+            </section>
+            <section>
+                <RegionSelector/>
             </section>
             </nav>
         

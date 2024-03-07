@@ -1,11 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 import './Inicio-bnv.css'
 
 function InicioBnv(){
 
     return <>
-    
         <BnvDiv className="div-container">
             <div className="text-container">
                 <h3 className="text-tittle">Bakery</h3>
