@@ -7,6 +7,7 @@ import LoginPage from './Pages/login/Login.jsx';
 import Products from './Pages/Products/Products.jsx'
 import Inventory from './Pages/Inventory/Inventory.jsx';
 import SplashScreen from './components/splashScreen/SplashScreen.jsx';
+import Testfb from './Pages/test/testfirebase.jsx';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/login" element={<LoginPage/>}/>
             <Route exact path="/products" element={<Products/>}/>
             <Route exact path="/adminInventory" element={<Inventory/>}/>
+            <Route exact path="/test" element={<Testfb/>}/>
           </Routes>
         </Router>
       </>

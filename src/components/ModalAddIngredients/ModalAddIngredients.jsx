@@ -33,7 +33,7 @@ const ModalIngredient = () => {
 
   return (
     <div className='container-component-products'>
-      <button className='insert-products-btn' onClick={handleOpenModal}>Subir Producto</button>
+      <button className='insert-products-btn' onClick={handleOpenModal}>Subir Ingrediente</button>
 
       {isOpen && (
         <div className="modal" id='popup'>

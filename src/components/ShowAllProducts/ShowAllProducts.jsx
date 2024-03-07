@@ -63,7 +63,7 @@ function ShowProducts() {
                                         </div>
                                         <div className='block'>
                                             <button className='btnoption' onClick={() => handleEdit(item)}>
-                                                <span class="material-symbols-outlined">edit</span>
+                                                <span className="material-symbols-outlined">edit</span>
                                             </button>
                                             <button className='btnoption' onClick={() => handleDelete(item._id)}>Borrar</button>
                                         </div>
