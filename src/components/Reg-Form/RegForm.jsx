@@ -76,10 +76,7 @@ function RegForm(){
                             errors.password = 'Las contraseñas deben coincidir' 
                             errors.confirmPass = 'Las contraseñas deben coincidir' 
                         }
-
                         return errors;
-
-
                     }}
                     onSubmit={(values,{resetForm}) => {
                         const data = {
@@ -87,8 +84,11 @@ function RegForm(){
                             lastname:values.lastname,
                             email:values.email,
                             cellphone:`${values.select}${values.cellphone}`,
-                            password:values.password
+                            password:values.password,
+                            // confirmPass:values.confirmPass,
                         }
+                        console.log(data)
+                        console.log(values);
                         
                         registerPost(data);
                         console.log('hola soy el data:');
@@ -194,32 +194,3 @@ function RegForm(){
 }
 
 export default RegForm
-
-
-
-// function regexPhoneNumber(value){
-//     if(!/^0414\d{7}$/.test(value)){
-//         return false
-//     }
-//     if(!/^0424\d{7}$/.test(value)){
-//         return false
-//     }
-//     if(!/^0412\d{7}$/.test(value)){
-//         return false
-//     }
-//     if(!/^0426\d{7}$/.test(value)){
-//         return false
-//     }
-//     if(!/^0416\d{7}$/.test(value)){
-//         return false
-//     }
-//     if(!/^0416\d{7}$/.test(value)){
-//         return false
-//     }
-// }
-// //denme un premio reduje 8 lineas de codigo con esta funcion :D
-// function regexName(value){
-//     if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(value)){
-//         return false
-//     }
-// }
