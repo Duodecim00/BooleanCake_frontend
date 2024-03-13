@@ -111,12 +111,21 @@
     color: #FDAB4A;
 }
 
-.form-grid-cell .error {
+.error-message {
 	color: #e92b2d;
-	font-weight: 600;
-	font-size: 12px;
+  background-color: #ffffff;
+  font-weight: 600;
+	font-size: 12px;;
+  text-align: center;
 }
 
+.error .input-register {
+  background-color: #ffcccc;
+  border: 2px solid #c91515; 
+}
+.error .input-register:focus {
+  caret-color:red;
+}
 
 .form-grid-cell-btn .exito {
 	text-align: center;
@@ -129,7 +138,6 @@
     display: flex;
     flex-direction: column;
   }
-
 
   .phone-input-container {
     display: flex;

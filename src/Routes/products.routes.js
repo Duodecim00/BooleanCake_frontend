@@ -33,7 +33,19 @@ function updateProduct(id) {
     .catch((err) => console.log(err));
 }
 async function getAllProducts() {
-    const responseData = await axios.get(`${apiLocalURL}/getall/Venezuela`)
+    const responseData = await axios.get(`${apiLocalURL}/getall/USA`)
+    return responseData;
+}
+
+async function searchProduct(id) {
+    console.log(id);
+    const responseData = await axios.get(`${apiLocalURL}/get/${id._id}`)
+    .then((res) => {
+        console.log(`encontre producto with id ${id}`);
+        console.log(res.data);
+    })
+    .catch((err) => console.log(err));
+
     return responseData;
 }
 
@@ -41,5 +53,8 @@ export {
     createProductsPost,
     getAllProducts,
     deleteProduct,
-    updateProduct
+    updateProduct,
+    searchProduct
 }
+
+

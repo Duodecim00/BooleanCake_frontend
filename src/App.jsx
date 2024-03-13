@@ -12,7 +12,7 @@ import Testfb from './Pages/test/testfirebase.jsx';
 function App() {
   return (
       <>
-        <SplashScreen/>
+        <SplashScreen/>        
         <Router>
           <Routes>
             <Route exact path="/" element={<InicioPage/>}/>

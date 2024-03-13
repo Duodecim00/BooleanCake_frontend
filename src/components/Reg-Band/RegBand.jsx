@@ -1,16 +1,16 @@
-import React, {useState} from "react";
+// import {useState} from "react";
 import './RegBand.css'
 import { Link } from "react-router-dom";
-import { useMediaQuery } from 'react-responsive';
+// import { useMediaQuery } from 'react-responsive';
 
 function RegBand(){
-    const [isComponentVisible, setComponentVisible] = useState(true);
+    // const [isComponentVisible, setComponentVisible] = useState(true);
 
-    const hideComponentOnMobile = useMediaQuery({ maxWidth: 400  }); // Ocultar componente en dispositivos con ancho máximo de 768px
+    // const hideComponentOnMobile = useMediaQuery({ maxWidth: 400  }); // Ocultar componente en dispositivos con ancho máximo de 768px
   // Función para alternar la visibilidad del componente
-  const toggleComponentVisibility = () => {
-    setComponentVisible(!isComponentVisible);
-  };
+  // const toggleComponentVisibility = () => {
+  //   setComponentVisible(!isComponentVisible);
+  // };
     return(
         <>
          <div className="img-container_reg">

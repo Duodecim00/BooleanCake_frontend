@@ -1,5 +1,5 @@
 // import React from "react";
-import NavLogin from "../../components/UserNav/UserNav.jsx";
+import NavLogin from "../../components/navs/UserNav/UserNav.jsx";
 import InicioBnv from '../../components/Inicio-Bnv/Inicio-bnv.jsx'
 
 
