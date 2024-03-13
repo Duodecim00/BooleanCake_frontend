@@ -8,11 +8,24 @@ import Products from './Pages/Products/Products.jsx'
 import Inventory from './Pages/Inventory/Inventory.jsx';
 import SplashScreen from './components/splashScreen/SplashScreen.jsx';
 import Testfb from './Pages/test/testfirebase.jsx';
+import SearchBar from './components/SearchBar/SearchBar.jsx';
+import { useState } from 'react';
+import  {SearchResultsList}  from './components/SearchBar/SearchResultsList/SearchResultsList.jsx';
 
 function App() {
+  const [results, setResults] = useState([]);
+
   return (
       <>
         <SplashScreen/>
+        <div className="SearchBar">
+          <div className="search-bar-container">
+            <SearchBar setResults={setResults}/>
+            <SearchResultsList results={results}/>
+          </div>
+        </div>
+        
+        
         <Router>
           <Routes>
             <Route exact path="/" element={<InicioPage/>}/>
