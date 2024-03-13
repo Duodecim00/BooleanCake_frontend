@@ -1,7 +1,7 @@
 import './UserNav.css';
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
-import RegionSelector from '../RegionSelector/RegionSelector';
+import RegionSelector from '../../RegionSelector/RegionSelector';
 
 function NavLogin() {
     return (

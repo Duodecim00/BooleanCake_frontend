@@ -1,6 +1,5 @@
-import React from "react";
 import RegBand from "../../components/Reg-Band/RegBand";
-import LogForm from "../../components/Log-Form/LogForm";
+import LogForm from "../../components/forms/Log-Form/LogForm";
 import styled from 'styled-components';
 import './Login.css'
 
