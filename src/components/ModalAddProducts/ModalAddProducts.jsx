@@ -45,13 +45,8 @@ const PostModal = () => {
       <button className='insert-products-btn' onClick={handleOpenModal}>Subir Producto</button>
 
       {isOpen && (
-        <div className="modal" id='popup'>
-          <div className="modal-content">
-            <nav className='navbar-modal-product'>
-              <h2 className='modal-product-tittle'>Subir Producto</h2>
-              <button className='modal-products-exit-btn' onClick={handleCloseModal}>X</button>
-            </nav>
-
+        <div className="modal-product" id='popup'>
+          <div className="modal-content-product">
             <Formik
                 initialValues={{
                     storage: 0,
@@ -92,48 +87,48 @@ const PostModal = () => {
                     }}
             >
              {({errors}) => (
-                <Form className="container-form-grid_products">
+                <Form className="container-form-product">
 
-                            <div className="form-grid-cell form-grid-cell-big">
-                                <label htmlFor="name">Nombre</label>
+                            <div className="grid-container-form-product">
+                                <label htmlFor="name" className='label-modal-product'>Producto</label>
                                 <Field
+                                className="modal-product-input"
                                 type="name"
                                 id="name"
                                 name="name"
                                 placeholder=""
                                 />
                             </div>
-                            <div className="form-grid-cell aparence-disable">
+                            <div className="grid-container-form-product">
+                                <label htmlFor="expireDate">Categoria</label>
+                                <Field
+                                    as="select"
+                                    type="category"
+                                    id="category"
+                                    name="category"
+                                    placeholder=""
+                                    className="modal-product-input"
+                                >
+                                  <option value="xd">torta</option>
+                                  <option value="xd">tortica</option>
+                                  <option value="xd">tortota</option>
+                                  <option value="xd">ponquesito</option>
+                                </Field>
+                            </div>
+                            <div className="grid-container-form-product">
                                 <label htmlFor="price">Precio</label>
                                 <Field
+                                    className="modal-product-input"
                                     type="number"
                                     id="price"
                                     name="price"
                                     placeholder=""
                                 />
                             </div>
-                            <div className="form-grid-cell aparence-disable">
-                                <label htmlFor="expireDate">Fecha de expiracion</label>
+                            <div className="grid-container-form-product">
+                                <label htmlFor="storage">Cantidad</label>
                                 <Field
-                                    type="date"
-                                    id="expireDate"
-                                    name="expireDate"
-                                    placeholder=""
-                                />
-                            </div>
-                            <div className="form-grid-cell aparence-disable">
-                                <label htmlFor="expireDate">Categoria</label>
-                                <Field
-                                    type="category"
-                                    id="category"
-                                    name="category"
-                                    placeholder=""
-                                />
-                            </div>
-                            
-                            <div className="form-grid-cell aparence-disable">
-                                <label htmlFor="storage">Almacenamiento</label>
-                                <Field
+                                    className="modal-product-input"
                                     type="number"
                                     id="storage"
                                     name="storage"
@@ -141,15 +136,24 @@ const PostModal = () => {
                                 />
                                 {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
                             </div>
-                            
-                            <div className="form-grid-cell aparence-disable">
-                              <input type="file" name="image" id="image" onChange={e => uploadFile(e.target.files[0])}></input>
+                            <div className="grid-container-form-product">
+                                <label htmlFor="expireDate">Fecha de expiracion</label>
+                                <Field
+                                    className="modal-product-input"
+                                    type="date"
+                                    id="expireDate"
+                                    name="expireDate"
+                                    placeholder=""
+                                />
+                            </div>
+                            <div className="modal-product-img-container">
+                              <input className='modal-product-img' type="file" name="image" id="image" onChange={e => uploadFile(e.target.files[0])}></input>
                                 {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
                             </div>
-
-                            <button className='modal-products-submit' type="submit">
-                                Subir
-                            </button>
+                            <div className='modal-product-btn-container'>
+                              <button className='modal-product-btn product-submit-btn' type="submit">Subir</button>
+                              <button className='modal-product-btn product-exit-btn' onClick={handleCloseModal}>Salir</button>
+                            </div>
                             
                 </Form>
              )}
