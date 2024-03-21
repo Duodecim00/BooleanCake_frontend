@@ -10,6 +10,8 @@ import SplashScreen from './components/splashScreen/SplashScreen.jsx';
 import Testfb from './Pages/test/testfirebase.jsx';
 
 function App() {
+  // const region=import.meta.env.VITE_REGION
+
   return (
       <>
         <SplashScreen/>        
