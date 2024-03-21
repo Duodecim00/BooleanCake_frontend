@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const apiLocalURL = 'http://localhost:7338/api/v1/product'; 
+const region = import.meta.env.VITE_REGION;
 
 function createProductsPost(data) {
     axios.post(`${apiLocalURL}/create`, data)
@@ -33,7 +34,7 @@ function updateProduct(id) {
     .catch((err) => console.log(err));
 }
 async function getAllProducts() {
-    const responseData = await axios.get(`${apiLocalURL}/getall/USA`)
+    const responseData = await axios.get(`${apiLocalURL}/getall/${region}`)
     return responseData.data;
 }
 
