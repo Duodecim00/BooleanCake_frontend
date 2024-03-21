@@ -4,7 +4,7 @@ import InicioBnv from '../../components/Inicio-Bnv/Inicio-bnv.jsx'
 
 
 function InicioPage(){
-    console.log(import.meta.env.VITE_HOLA);
+ 
     return(
         <>
             <div>

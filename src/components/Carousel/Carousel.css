@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+
+
+.carousel_container{
+    padding-left: 20px;
+}
+
+.card_container{
+    font-size: 12px;
+    height: 300px;
+    width: 200px;
+   
+}
+
+
+
+.title_products{
+    color: #606060;
+    font-family: "Rozha One", serif;
+    font-size: 95px;
+  font-weight: 400;
+  font-style: normal;
+  justify-content: center;
+  display: flex;
+}
+
+.product--image{
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+    object-fit: fill;
+}
+
+
+
