@@ -34,7 +34,7 @@ function updateProduct(id) {
 }
 async function getAllProducts() {
     const responseData = await axios.get(`${apiLocalURL}/getall/USA`)
-    return responseData;
+    return responseData.data;
 }
 
 async function searchProduct(id) {
