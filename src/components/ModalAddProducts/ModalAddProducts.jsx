@@ -8,12 +8,6 @@ const PostModal = () => {
   const pred = 'Venezuela'
   const [file, setFile] = useState(null)
   const [isOpen, setIsOpen] = useState(false);
-//   const [post, setPost] = useState({
-//     precio: 0,
-//     nombre: '',
-//     stock: 0,
-//     fecha: ''
-//   });
 
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -22,24 +16,7 @@ const PostModal = () => {
   const handleCloseModal = () => {
     setIsOpen(false);
   };
-
-//   const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     setPost({ ...post, [name]: value });
-//   };
-
-//   const handleCreatePost = () => {
-//     // Aquí puedes realizar la lógica para enviar el post al servidor
-//     console.log('Nuevo post:', post);
-//     // createProductsPost(data);
-//     // Aquí puedes realizar las validaciones y el envío de datos al servidor
-//     // Puedes realizar una solicitud HTTP utilizando fetch o axios para enviar los datos
-//     // al backend y guardar el post en la base de datos
-
-//     // Después de enviar el post, puedes cerrar el modal
-//     handleCloseModal();
-//   };
-
+  const region = import.meta.env.VITE_REGION;
   return (
     <div className='container-component-products'>
       <button className='insert-products-btn' onClick={handleOpenModal}>Subir Producto</button>
@@ -75,8 +52,18 @@ const PostModal = () => {
                     // }}
                     onSubmit={async (values, {resetForm})=>{
                       try{
-                        const result = await uploadFile(file)
-                        createProductsPost(values);
+                        const result = await uploadFile(file);
+                        console.log(result);
+                        const data = {
+                            name:values.name,
+                            storage:values.storage,
+                            price:values.price,
+                            expireDate:values.expireDate,
+                            category:values.category,
+                            region: region,
+                            image: result
+                        }
+                        createProductsPost(data);
                       }catch(error){
                         console.error(error)
                         }
@@ -156,7 +143,7 @@ const PostModal = () => {
                             </div>
                             
                 </Form>
-             )}
+            )}
             
             </Formik>
           </div>
@@ -167,74 +154,3 @@ const PostModal = () => {
 };
 
 export default PostModal;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//gptciño
-//   <div className="modal">
-//           <div className="modal-content">
-//             <h2>Crear Post</h2>
-//             <form>
-//               <div>
-//                 <label htmlFor="precio">Precio:</label>
-//                 <input
-//                   type="number"
-//                   id="precio"
-//                   name="precio"
-//                   value={post.precio}
-//                   onChange={handleInputChange}
-//                 />
-//               </div>
-//               <div>
-//                 <label htmlFor="nombre">Nombre:</label>
-//                 <input
-//                   type="text"
-//                   id="nombre"
-//                   name="nombre"
-//                   value={post.nombre}
-//                   onChange={handleInputChange}
-//                 />
-//               </div>
-//               <div>
-//                 <label htmlFor="stock">Stock:</label>
-//                 <input
-//                   type="number"
-//                   id="stock"
-//                   name="stock"
-//                   value={post.stock}
-//                   onChange={handleInputChange}
-//                 />
-//               </div>
-//               <div>
-//                 <label htmlFor="fecha">Fecha:</label>
-//                 <input
-//                   type="text"
-//                   id="fecha"
-//                   name="fecha"
-//                   value={post.fecha}
-//                   onChange={handleInputChange}
-//                 />
-//               </div>
-//               <button type="button" onClick={handleCreatePost}>
-//                 Publicar
-//               </button>
-//               <button type="button" onClick={handleCloseModal}>
-//                 Cancelar
-//               </button>
-//             </form>
-//           </div>
-//         </div>

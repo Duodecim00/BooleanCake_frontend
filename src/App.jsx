@@ -10,6 +10,8 @@ import Testfb from './Pages/test/testfirebase.jsx';
 import CarouselProducts from './components/Carousel/Carousel.jsx';
 
 function App() {
+  // const region=import.meta.env.VITE_REGION
+
   return (
       <>
         <SplashScreen/>        
