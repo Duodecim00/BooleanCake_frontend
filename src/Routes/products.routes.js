@@ -33,8 +33,8 @@ function updateProduct(id) {
     .catch((err) => console.log(err));
 }
 async function getAllProducts() {
-    const responseData = await axios.get(`${apiLocalURL}/getall/EU`)
-    return responseData;
+    const responseData = await axios.get(`${apiLocalURL}/getall/USA`)
+    return responseData.data;
 }
 
 async function searchProduct(id) {

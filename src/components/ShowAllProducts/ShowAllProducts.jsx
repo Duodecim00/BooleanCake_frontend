@@ -19,7 +19,7 @@ function ShowProducts() {
     try {
         const products = await getAllProducts();
         console.log(products);
-        setData(products.data.data);
+        setData(products.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }

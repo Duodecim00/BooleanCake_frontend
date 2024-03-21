@@ -1,6 +1,5 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-
 import InicioPage from './Pages/Inicio/Inicio.jsx';
 import RegPage from './Pages/Register/Register.jsx';
 import LoginPage from './Pages/login/Login.jsx';
@@ -8,6 +7,7 @@ import Products from './Pages/Products/Products.jsx'
 import Inventory from './Pages/Inventory/Inventory.jsx';
 import SplashScreen from './components/splashScreen/SplashScreen.jsx';
 import Testfb from './Pages/test/testfirebase.jsx';
+import CarouselProducts from './components/Carousel/Carousel.jsx';
 
 function App() {
   // const region=import.meta.env.VITE_REGION
@@ -24,6 +24,7 @@ function App() {
             <Route exact path="/adminInventory" element={<Inventory/>}/>
             <Route exact path="/test" element={<Testfb/>}/>
           </Routes>
+          <CarouselProducts/>
         </Router>
       </>
   );
