@@ -1,13 +1,21 @@
-FROM node:latest
+#las versiones de node docker estan en https://hub.docker.com
+FROM node:alpine
 
 WORKDIR /app
 
-COPY . .
+#copiar package.json
+COPY package*.json .
 
+#instalar paquetes
 RUN npm install
 
+#copiar los archivos restantes
+COPY . .
+COPY vite.config.js .
+
+#finalmente construir el proyecto
 RUN npm run build
 
-EXPOSE 5173
+EXPOSE 5175
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "preview"]
