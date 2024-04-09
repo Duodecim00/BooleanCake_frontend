@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { createProductsPost } from '../../Routes/products.routes';
+import { createProductsPost } from '../../api/products.routes';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
 import './ModalAddProducts.css'
 import { uploadFile } from '../../firebase/config';

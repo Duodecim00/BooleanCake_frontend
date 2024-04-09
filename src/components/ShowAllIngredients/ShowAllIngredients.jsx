@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { deleteIngredient, getAllIngredient, updateIngredient } from '../../Routes/ingredients.routes';
+import { deleteIngredient, getAllIngredient, updateIngredient } from '../../api/ingredients.routes';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 function ShowIngredient() {

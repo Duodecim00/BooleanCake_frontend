@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './ShowAllProducts.css';
-import { getAllProducts, deleteProduct, updateProduct } from '../../Routes/products.routes';
+import { getAllProducts, deleteProduct, updateProduct } from '../../api/products.routes';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import './ShowAllProducts.css'
 

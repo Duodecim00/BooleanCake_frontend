@@ -1,7 +1,7 @@
 import './LogForm.css'
 import {Link, useNavigate} from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { loginPost } from "../../../Routes/user.routes";
+import { loginPost } from "../../../api/user.routes";
 
 function LogForm(){
     const navigate = useNavigate();
