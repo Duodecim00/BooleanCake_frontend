@@ -28,7 +28,17 @@ function loginPost(data) {
     .catch((err) => console.log(err));
 }
 
-export {
-    registerPost,
-    loginPost,
+
+function updateUser(data) {
+    axios.put(`${apiLocalURL}/update`, data)
+    .then((res) => {
+        console.log('Datos de usuario actualizados con éxito:');
+        console.log(res.data);
+    })
+    .catch((err) => console.log(err));
 }
+
+export { registerPost, loginPost, updateUser };
+
+
+
