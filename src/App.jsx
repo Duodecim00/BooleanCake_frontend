@@ -8,6 +8,7 @@ import Inventory from './Pages/Inventory/Inventory.jsx';
 import SplashScreen from './components/splashScreen/SplashScreen.jsx';
 import Testfb from './Pages/test/testfirebase.jsx';
 import MenuPage from './Pages/Menu/Menu.jsx';
+import PageSingleProduct from './Pages/PageSingleProduct/PageSingleProduct.jsx'
 
 function App() {
   // const region=import.meta.env.VITE_REGION
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/adminInventory" element={<Inventory/>}/>
             <Route exact path="/test" element={<Testfb/>}/>
             <Route exact path="/menu" element={<MenuPage/>}/>
+            <Route exact path="/singleproduct" element={<PageSingleProduct/>}></Route>
           </Routes>
         </Router>
       </>
