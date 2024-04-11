@@ -7,7 +7,7 @@ import Products from './Pages/Products/Products.jsx'
 import Inventory from './Pages/Inventory/Inventory.jsx';
 import SplashScreen from './components/splashScreen/SplashScreen.jsx';
 import Testfb from './Pages/test/testfirebase.jsx';
-
+import PageSingleProduct from './Pages/PageSingleProduct/PageSingleProduct.jsx'
 function App() {
   // const region=import.meta.env.VITE_REGION
 
@@ -22,6 +22,7 @@ function App() {
             <Route exact path="/products" element={<Products/>}/>
             <Route exact path="/adminInventory" element={<Inventory/>}/>
             <Route exact path="/test" element={<Testfb/>}/>
+            <Route exact path="/singleproduct" element={<PageSingleProduct/>}></Route>
           </Routes>
         </Router>
       </>

@@ -1,0 +1,25 @@
+.footer{
+    margin-top: 10px;
+    height: 197px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: black;
+}
+
+.footerHeaderText{
+    font-size: 36px;
+    margin-top: 65px;
+    margin-left: 70px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    background-color: transparent;
+}
+.footerText{
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    margin-left: 70px;
+    color: white;
+    background-color: transparent;
+}
