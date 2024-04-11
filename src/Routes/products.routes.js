@@ -3,7 +3,7 @@ import axios from "axios";
 const apiLocalURL = 'http://localhost:7338/api/v1/product'; 
 
 function createProductsPost(data) {
-    axios.post(`${apiLocalURL}/create`, data)
+    axios.post(`${apiLocalURL}`, data)
     .then((res) => {
         console.log('soy la data de respuesta:');
         console.log(res.data);
