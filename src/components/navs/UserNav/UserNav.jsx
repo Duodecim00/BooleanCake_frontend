@@ -30,6 +30,7 @@ function NavLogin() {
           <Link className="nav-btn selected" to="/">Inicio</Link>
           <Link className="nav-btn" to="/">Productos</Link>
           <Link className="nav-btn" to="/">Contacto</Link>
+          <Link className="nav-btn" to="/">Nosostros</Link>
 
         </section>
         {/* <section>
