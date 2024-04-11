@@ -2,10 +2,10 @@ import './LogForm.css'
 import {Link, useNavigate} from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginPost } from "../../../api/user.routes";
+// import Cookies from 'js-cookie';
 
 function LogForm(){
     const navigate = useNavigate();
-
     return(
         <>
             <div className="component-container_log" >
@@ -37,7 +37,9 @@ function LogForm(){
                         try{
                             loginPost(values);
                             alert('Login Successful');
-                            navigate('/');
+// Leer la cookie       
+                        
+                            // navigate('/');
                         }
                         catch(e){
                             console.log(e);
