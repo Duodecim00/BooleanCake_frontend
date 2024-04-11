@@ -60,7 +60,7 @@ export default function CarouselProducts(){
 
       return(
         <div className="carousel_container">
-            <h1 className="title_products">Magdalenas</h1>
+            <h1 className="title_products">Recomendaciones</h1>
             <Carousel responsive={responsive} itemClass="carousel-item-padding-40-px">
                 {product}
             </Carousel>
