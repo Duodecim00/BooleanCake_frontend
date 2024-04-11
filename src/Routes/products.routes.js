@@ -38,6 +38,15 @@ async function getAllProducts() {
     return responseData.data;
 }
 
+async function getInStock(){
+    const responseData = await axios.get(`${apiLocalURL}/getinstock/${region}`)
+    return responseData.data;
+}
+async function getNoCustom(){
+    const responseData = await axios.get(`${apiLocalURL}/getnocustom/${region}`)
+    return responseData.data;
+}
+
 async function searchProduct(id) {
     console.log(id);
     const responseData = await axios.get(`${apiLocalURL}/get/${id._id}`)
@@ -55,7 +64,9 @@ export {
     getAllProducts,
     deleteProduct,
     updateProduct,
-    searchProduct
+    searchProduct,
+    getInStock,
+    getNoCustom
 }
 
 
