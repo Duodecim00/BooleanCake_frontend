@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 import './Inicio-bnv.css'
 
 function InicioBnv(){
@@ -47,7 +48,7 @@ function InicioBnv(){
                 <p className="text-pa">
                     Deliciosas tartas personalizadas. Haz que tus vacaciones sean aun mejores con nosotros tendras tranquilidad sobre tus eventos
                 </p>
-                <button className="btn-leer" style={{backgroundColor: primaryColor}}>Leer mas</button>
+                <Link to="/AboutUS"className="btn-leer" style={{backgroundColor: primaryColor}}>Leer mas</Link>
             </div>
             <div className="img-container">
                 <img src={imagelanding} alt="Una tortica"/>

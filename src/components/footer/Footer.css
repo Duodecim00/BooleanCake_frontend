@@ -1,6 +1,6 @@
 .footer{
     margin-top: 10px;
-    height: 197px;
+    height: 310px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -20,6 +20,56 @@
     font-family: "Inter", sans-serif;
     font-size: 24px;
     margin-left: 70px;
+    margin-bottom: 10px;
     color: white;
     background-color: transparent;
+}
+
+.line{
+    position: relative;
+    width: 100%;
+    background-color: white;
+    height: 1px;
+    margin-top: 40px;
+}
+
+.whoweare{
+    position: relative;
+    width: 33.33%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+
+
+.footer2{
+    margin-top: 10px;
+    height: 310px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    background-color: black;
+}
+
+.logo{
+    position: relative;
+    background-color: black;
+    color: black;
+    height: 50px;
+    width: 50px;
+    margin-right: 10%;
+}
+
+.logos{
+    position: relative;
+    width: 33.33%;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
