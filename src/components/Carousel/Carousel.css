@@ -9,7 +9,6 @@
     font-size: 12px;
     height: 300px;
     width: 200px;
-   
 }
 
 
@@ -18,10 +17,10 @@
     color: #606060;
     font-family: "Rozha One", serif;
     font-size: 95px;
-  font-weight: 400;
-  font-style: normal;
-  justify-content: center;
-  display: flex;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: center;
+    display: flex;
 }
 
 .product--image{

@@ -25,7 +25,7 @@ function MenuList() {
     ))
 	return (
 		<>
-            <div>{product}</div>
+            <div className=''>{product}</div>
 		</>
 	);
 }
