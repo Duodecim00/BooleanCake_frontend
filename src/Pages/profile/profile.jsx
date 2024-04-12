@@ -8,7 +8,7 @@ const Profile = () => {
       
       <div>
         <AdminNav></AdminNav>
-        <ProfForm/>
+        <ProfForm />
       
       </div>
 
