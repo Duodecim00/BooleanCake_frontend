@@ -4,7 +4,7 @@ const apiLocalURL = 'http://localhost:7338/api/v1/product';
 const region = import.meta.env.VITE_REGION;
 
 function createProductsPost(data) {
-    axios.post(`${apiLocalURL}/create`, data)
+    axios.post(`${apiLocalURL}`, data)
     .then((res) => {
         console.log('soy la data de respuesta:');
         console.log(res.data);
@@ -38,6 +38,15 @@ async function getAllProducts() {
     return responseData.data;
 }
 
+async function getInStock(){
+    const responseData = await axios.get(`${apiLocalURL}/getinstock/${region}`)
+    return responseData.data;
+}
+async function getNoCustom(){
+    const responseData = await axios.get(`${apiLocalURL}/getnocustom/${region}`)
+    return responseData.data;
+}
+
 async function searchProduct(id) {
     console.log(id);
     const responseData = await axios.get(`${apiLocalURL}/get/${id._id}`)
@@ -55,7 +64,9 @@ export {
     getAllProducts,
     deleteProduct,
     updateProduct,
-    searchProduct
+    searchProduct,
+    getInStock,
+    getNoCustom
 }
 
 

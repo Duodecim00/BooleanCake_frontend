@@ -1,0 +1,149 @@
+.item_container{
+    /* background-color: #333; */
+    display: flex;
+    margin-top: 30px;
+    height: 250px;
+    width: 100%;
+
+}
+.information{
+    padding: 0;
+    /* background-color: ; */
+}
+
+.image_container{
+    position: relative; 
+    width: 45%;
+    background-color: transparent;
+}
+.product--image{
+    position: relative; 
+    margin-top: 10%;
+    left: 10%;
+    height: 240px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+
+.div-container{
+    max-width: 100%;
+    display: flex;
+    padding: 10px 100px;
+    text-align: start;
+
+}
+
+.product-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 5%;
+    width: 90%;
+    height: 565px;
+    background-color: #F7F5F0;  
+}
+
+
+
+.img{
+    position: relative;
+    margin-top: 10%;
+    left: 10%;
+    width: 433px;
+    height: 432px;
+    /* object-fit: cover; */
+    border-radius: 30px;
+}
+
+.product-details{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 55%;
+    background-color: transparent;
+    
+}
+
+
+.product-header{
+    position: relative;
+    background-color: transparent;
+    margin-top: 10%;
+    font-family: "Rozha One";
+    font-size: 64px;
+}
+
+.nameProduct{
+    font-family: "Rozha One";
+    margin:0px;
+    font-size: 32px ;
+}
+
+.product-description{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    color: #606060;
+    
+}
+
+.description-text{
+    position: relative;
+    background-color: transparent;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    border-bottom: 1%;
+}
+
+.prices{
+    position: relative;
+    font-size: 24px;
+    color: #606060;
+    background-color: transparent;
+}
+
+
+.controls{
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+}
+
+.plusButton{
+    position: relative;
+    height: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 60px;
+    border-radius: 15px;
+    background-color: black;
+}
+
+
+.amount{
+    position: relative;
+    font-size: 36px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: transparent;
+}
+
+.addProduct{
+    position: relative;
+    height: 50px;
+    width: 180px    ;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    font-family: "Inter";
+    font-size: 14px;
+}
+
+
