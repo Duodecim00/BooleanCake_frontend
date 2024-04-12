@@ -8,7 +8,7 @@ function InicioPage() {
 		<>
 			<div>
 				<NavLogin></NavLogin>
-				<InicioBnv></InicioBnv>
+				<InicioBnv></InicioBnv>	
 				<CarouselProducts />
 			</div>
 		</>
