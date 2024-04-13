@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
-import './Inicio-bnv.css'
+import './Aboutus-bnv.css'
 
-function InicioBnv(){
+function AboutusBnv(){
     const region = import.meta.env.VITE_REGION;
     var primaryColor;
     var imagelanding;
@@ -44,11 +43,12 @@ function InicioBnv(){
     return <>
         <BnvDiv className="div-container">
             <div className="text-container">
-                <h3 className="text-tittle">Bakery</h3>
-                <p className="text-pa">
-                    Deliciosas tartas personalizadas. Haz que tus vacaciones sean aun mejores con nosotros tendras tranquilidad sobre tus eventos
+                <h3 className="text-tittle">Buttercream</h3>
+                <p className="text-pad">
+                Nosotros somos Buttercream, una exquisita repostería que se especializa en crear deliciosos postres artesanales con un toque único y creativo.
+                Nuestros productos están elaborados con ingredientes de la más alta calidad y con un cuidado especial en cada detalle. 
+                En Buttercream, nos apasiona endulzar la vida de nuestros clientes con sabores irresistibles y presentaciones elegantes. ¡Déjanos ser parte de tus momentos especiales y disfruta de la dulzura de Buttercream!
                 </p>
-                <Link to="/AboutUS"className="btn-leer" style={{backgroundColor: primaryColor}}>Leer mas</Link>
             </div>
             <div className="img-container">
                 <img src={imagelanding} alt="Una tortica"/>
@@ -58,7 +58,7 @@ function InicioBnv(){
     </>   
 }
 
-export default InicioBnv
+export default AboutusBnv
 
 
 const BnvDiv = styled.div`
