@@ -1,13 +1,11 @@
-import AdminNav from '../../components/navs/AdminNav/AdminNav.jsx';
 import ProfForm  from '../../components/forms/Prof-Form/ProfForm.jsx';
-
-
+import RenderNav from '../../components/navs/RenderNav/RenderNav.jsx';
 
 const Profile = () => {
     return (
       
       <div>
-        <AdminNav/>
+        <RenderNav/>
         <ProfForm />
       </div>
 
