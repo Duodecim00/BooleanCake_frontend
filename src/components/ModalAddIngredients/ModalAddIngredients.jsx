@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
-import { createIngredient } from '../../api/ingredients.routes';
+import { createIngredient } from '../../api/ingredients.api';
 import './ModalAddIngredients.css'
 
 const ModalIngredient = () => {

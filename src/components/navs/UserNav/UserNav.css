@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ramaraja&display=swap');
+:root {
+    --hover-color: var(--default-hover-color);
+  }
+  
 
 .nav-container{
     margin: 15px;
@@ -38,6 +42,7 @@
     text-decoration: underline ;
     text-decoration-thickness: 3px;
     text-underline-offset: 4px;
+    /* text-decoration-color: var(--hover-color); */
     text-decoration-color: #FDAB4A;
     
     transition: color 0.3s ease-in-out;

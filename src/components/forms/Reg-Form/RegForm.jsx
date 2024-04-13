@@ -1,6 +1,6 @@
 import './RegForm.css';
 import {Link} from "react-router-dom";
-import { registerPost } from "../../../api/user.routes";
+import { registerPost } from "../../../api/user.api";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 function RegForm(){

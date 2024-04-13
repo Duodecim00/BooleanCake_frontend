@@ -1,5 +1,5 @@
 import axios from "axios";
-// import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 import {createCookieRol, createCookieSession, destroyCookie} from "./cookie";
 
 const apiLocalURL = 'http://localhost:7338/api/v1/user'; 
@@ -21,7 +21,7 @@ function loginPost(data) {
         createCookieSession(res.data.cookie)
         createCookieRol(res.data.role)
         // console.log('soy la cookie rol',Cookies.get('rol'));
-        // console.log('soy la cookie session',Cookies.get('session'));
+        console.log('soy la cookie session',Cookies.get('session'));
         
     })
     .catch((err) => console.log(err));
