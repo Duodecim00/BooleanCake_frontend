@@ -7,6 +7,7 @@ function MenuPage() {
 	return (
 		<>
 			<div>
+			{/* Tiene nav login y no render porque la vista no esta terminada y va a ir en una ruta exclusiva para usuarios */}
 				<NavLogin/>
                 <MenuList/>
                 <Footer/>

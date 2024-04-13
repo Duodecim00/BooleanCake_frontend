@@ -1,14 +1,13 @@
-import AdminNav from '../../components/navs/AdminNav/AdminNav.jsx';
 import ModalIngredient from '../../components/ModalAddIngredients/ModalAddIngredients.jsx';
-
 import ShowIngredient from '../../components/ShowAllIngredients/ShowAllIngredients.jsx';
+import RenderNav from '../../components/navs/RenderNav/RenderNav.jsx';
 
 function Inventory(){
 
     return(
         <>
             <div className="products-container">
-                <AdminNav/>
+                <RenderNav/>
                 <ShowIngredient/>
                 <ModalIngredient/>
             </div>

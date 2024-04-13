@@ -1,7 +1,7 @@
 import { useEffect, useState    } from 'react';
 import './MenuList.css'
 import ItemMenu from './ItemMenu';
-import { getInStock,getNoCustom} from '../../Routes/products.routes';
+import { getInStock,getNoCustom} from '../../api/products.api';
 
 function MenuList() {
 

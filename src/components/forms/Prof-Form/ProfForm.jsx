@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { updateUser, logoutUser } from '../../Routes/user.routes'; // Asegúrate de ajustar la ruta de importación según tu estructura
+import { updateUser, logoutUser } from '../../../api/user.api'; // Asegúrate de ajustar la ruta de importación según tu estructura
 
 const Profile = () => {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false);

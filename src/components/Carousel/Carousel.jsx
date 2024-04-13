@@ -4,22 +4,19 @@ import { useState, useEffect } from 'react';
 import "react-multi-carousel/lib/styles.css";
 import ProductCarousel from "./ProductCarousel";
 import "../Carousel/Carousel.css"
-import { getAllProducts } from "../../Routes/products.routes";
+import { getAllProducts } from "../../api/products.api";
 
 
 export default function CarouselProducts(){
 
-   async function handleProduct(){
-           try {
+    async function handleProduct(){
+          try {
             var products = await getAllProducts()
-        
 
           setproductData(products.data)
-         
-   
           } catch (error) {
             console.error(error)
-         }
+          }
   
           //setproductData(getAllProducts())
           //console.log("qwertyuiop")

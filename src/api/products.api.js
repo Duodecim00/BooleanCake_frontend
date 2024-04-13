@@ -1,16 +1,39 @@
 import axios from "axios";
 
-const apiLocalURL = 'http://localhost:7338/api/v1/product'; 
+const apiLocalURL = `${import.meta.env.VITE_BASEURL}/product`; 
 const region = import.meta.env.VITE_REGION;
 
-function createProductsPost(data) {
-    axios.post(`${apiLocalURL}`, data)
-    .then((res) => {
-        console.log('soy la data de respuesta:');
-        console.log(res.data);
-    })
-    .catch((err) => console.log(err));
+async function createProductsPost(data) {
+    try{
+        const response = await axios.post(`${apiLocalURL}/create`, data, {
+            headers: {
+                "Content-Type":"application/json"
+            }
+            })
+        console.log('Respuesta del servidor', response.data);
+        return response.data;
+    } catch(error){
+        console.log('Error al enviar los datos:', error);
+        throw error
+    }
 }
+    // .then((res) => {
+    //     console.log('soy la data de respuesta:');
+    //     console.log(res.data);
+    // })
+    // .catch((err) => console.log(err));
+
+
+    /*Cambio giorgio no */
+// function createProductsPost(data) {
+//     axios.post(`${apiLocalURL}`, data)
+//     .then((res) => {
+//         console.log('soy la data de respuesta:');
+//         console.log(res.data);
+//     })
+//     .catch((err) => console.log(err));
+
+// }
 function deleteProduct(id) {
     const _id = {
         "_id":id
@@ -68,5 +91,3 @@ export {
     getInStock,
     getNoCustom
 }
-
-

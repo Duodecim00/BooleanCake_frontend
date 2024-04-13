@@ -1,9 +1,9 @@
 import './UserNav.css';
-import styled from 'styled-components';
 import {Link} from "react-router-dom";
-import RegionSelector from '../../RegionSelector/RegionSelector';
-
+import Cookies from "js-cookie";
+// import SearchBar from '../../SearchBar/SearchBar';
 function NavLogin() {
+  const rol = Cookies.get("rol");
   const region = import.meta.env.VITE_REGION;
   var primaryColor;
   switch (region) {
@@ -23,7 +23,7 @@ function NavLogin() {
         primaryColor = '#ffd700'; // Negro por defecto
     }
     return (
-      <NavContainer className="nav-container">
+      <div className="nav-container">
         <h1 className="nav-titulo" style={{color: primaryColor}}>ButterCream!</h1>
         <section className="container">
 
@@ -33,20 +33,22 @@ function NavLogin() {
           <Link className="nav-btn" to="/">Nosostros</Link>
 
         </section>
-        {/* <section>
-          <RegionSelector/>
-        </section> */}
-        <section>
-          <Link to="/login" className="nav-btn_login">Iniciar Sesion</Link>
-          <Link to="/registro" className="nav-btn_register">Registrarse</Link>
-        </section>
-      </NavContainer>
+        {
+                rol ? (
+                <section>
+                    {/* <SearchBar/> */}
+                    <Link><span className="material-symbols-outlined">person</span></Link>
+                    <Link><span className="material-symbols-outlined">grid_view</span></Link>
+                </section>
+                ): (
+                <section>
+                  <Link to="/login" className="nav-btn_login">Iniciar Sesion</Link>
+                  <Link to="/registro" className="nav-btn_register">Registrarse</Link>
+                </section>
+                )
+            }
+      </div>
     );
   }
 
 export default NavLogin
-
-const NavContainer = styled.nav`
-    
-
-`

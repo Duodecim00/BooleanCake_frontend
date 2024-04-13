@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { createProductsPost } from '../../Routes/products.routes';
+import { createProductsPost } from '../../api/products.api';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
 import './ModalAddProducts.css'
 import { uploadFile } from '../../firebase/config';
@@ -26,12 +26,13 @@ const PostModal = () => {
           <div className="modal-content-product">
             <Formik
                 initialValues={{
-                    storage: 0,
-                    price: 0,
+                    stock: 0,
                     name:'',
+                    price: 0,
                     expireDate:'',
-                    category:'',
-                    region: pred,
+                    isPersonalized:false,
+                    category:'torta',
+                    region: region,
                     image:''
                     }}
                     // validate={(values)=>{
@@ -56,15 +57,22 @@ const PostModal = () => {
                         console.log(result);
                         const data = {
                             name:values.name,
-                            storage:values.storage,
+                            stock:values.stock,
                             price:values.price,
                             expireDate:values.expireDate,
                             category:values.category,
+                            isPersonalized:values.isPersonalized,
                             region: region,
                             image: result
                         }
+
+                        const jason = JSON.stringify(data)
+                        console.log(jason);
+                        console.log(typeof(data.price));
                         createProductsPost(data);
-                      }catch(error){
+
+                      }
+                      catch(error){
                         console.error(error)
                         }
                         handleCloseModal();
@@ -87,7 +95,7 @@ const PostModal = () => {
                                 />
                             </div>
                             <div className="grid-container-form-product">
-                                <label htmlFor="expireDate">Categoria</label>
+                                <label htmlFor="category">Categoria</label>
                                 <Field
                                     as="select"
                                     type="category"
@@ -96,10 +104,23 @@ const PostModal = () => {
                                     placeholder=""
                                     className="modal-product-input"
                                 >
-                                  <option value="xd">torta</option>
-                                  <option value="xd">tortica</option>
-                                  <option value="xd">tortota</option>
-                                  <option value="xd">ponquesito</option>
+                                  <option value="torta">torta</option>
+                                  <option value="cupcakes">cupcakes</option>
+                                  <option value="brownies">brownies</option>
+                                </Field>
+                            </div>
+                            <div className="grid-container-form-product">
+                                <label htmlFor="isPersonalized">Es personalizada</label>
+                                <Field
+                                    as="select"
+                                    type="isPersonalized"
+                                    id="isPersonalized"
+                                    name="isPersonalized"
+                                    placeholder=""
+                                    className="modal-product-input"
+                                >
+                                  <option value="true">Si</option>
+                                  <option value="false">No</option>
                                 </Field>
                             </div>
                             <div className="grid-container-form-product">
@@ -113,12 +134,12 @@ const PostModal = () => {
                                 />
                             </div>
                             <div className="grid-container-form-product">
-                                <label htmlFor="storage">Cantidad</label>
+                                <label htmlFor="stock">Cantidad</label>
                                 <Field
                                     className="modal-product-input"
                                     type="number"
-                                    id="storage"
-                                    name="storage"
+                                    id="stock"
+                                    name="stock"
                                     placeholder=""
                                 />
                                 {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
