@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './ShowAllProducts.css';
-import { getAllProducts, deleteProduct, updateProduct } from '../../Routes/products.routes';
+import { getAllProducts, deleteProduct, updateProduct } from '../../api/products.api';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import './ShowAllProducts.css'
 
@@ -19,7 +19,7 @@ function ShowProducts() {
     try {
         const products = await getAllProducts();
         console.log(products);
-        setData(products.data.data);
+        setData(products.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }

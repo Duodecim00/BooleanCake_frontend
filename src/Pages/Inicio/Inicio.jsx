@@ -1,19 +1,22 @@
-// import React from "react";
-import NavLogin from "../../components/UserNav/UserNav.jsx";
-import InicioBnv from '../../components/Inicio-Bnv/Inicio-bnv.jsx'
+import CarouselProducts from '../../components/Carousel/Carousel.jsx';
+import InicioBnv from '../../components/Inicio-Bnv/Inicio-bnv.jsx';
+// import NavLogin from "../../components/navs/UserNav/UserNav.jsx";
 
+// import AdminNav from "../../components/navs/AdminNav/AdminNav.jsx";
+import RenderNav from "../../components/navs/RenderNav/RenderNav.jsx";
 
 function InicioPage(){
-    console.log(import.meta.env.VITE_HOLA);
     return(
         <>
             <div>
-                <NavLogin></NavLogin>
-                <InicioBnv></InicioBnv>
+                {/* <NavLogin></NavLogin> */}
+                {/* <AdminNav></AdminNav> */}
+                <RenderNav/>
+                <InicioBnv/>
+                <CarouselProducts />
             </div>
         
         </>
     )
 }
-
-export default InicioPage
+export default InicioPage;
