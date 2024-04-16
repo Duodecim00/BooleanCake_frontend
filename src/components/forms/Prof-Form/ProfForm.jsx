@@ -1,13 +1,29 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate de react-router-dom para la redirección
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { updateUser, logoutUser } from '../../../api/user.api'; // Asegúrate de ajustar la ruta de importación según tu estructura
+import { destroyCookie } from '../../../api/cookie';
 
 const Profile = () => {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
+  const [errorMensaje, setErrorMensaje] = useState('');
+  const navigate = useNavigate(); // Hook para la redirección
+
+  const handleLogout = async () => {
+    try {
+        await logoutUser();
+        console.log('Sesión cerrada con éxito');
+       
+        navigate('/login'); // Redirige al usuario tras el cierre de sesión exitoso
+    } catch (error) {
+        console.error('Error durante el cierre de sesión:', error);
+    }
+};
 
   return (
     <div>
       <h2>Editar Perfil</h2>
+      {errorMensaje && <p className="error">{errorMensaje}</p>}
       <Formik
         initialValues={{
           name: '',
@@ -19,6 +35,52 @@ const Profile = () => {
         validate={(values) => {
           let errors = {};
           // Aquí deberías añadir tus validaciones
+
+            // Validacion nombre
+                        if(!values.name){
+                            errors.name = 'Por favor ingresa un nombre'
+                        } else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.name)) {
+                            errors.name = 'El nombre solo puede contener letras y espacios'
+                        }
+                        // Validacion Apellido
+                        if(!values.lastname){
+                            errors.lastname = 'Por favor ingresa un Apellido'
+                        } else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.lastname)){
+                            errors.lastname = 'El Apellido solo puede contener letras y espacios'
+                        }
+
+                        // Validacion correo
+                        if(!values.email){
+                            errors.email = 'Por favor ingresa un correo electronico'
+                        } else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(values.email)){
+                            errors.email = 'El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.'
+                        }
+
+                        //Validar numeros de telefono
+                        if(!values.select || values.select== undefined){
+                            errors.select = 'Selecciona un codigo'
+                        } 
+                        // else if(!/^\d{7}$/.test(values.cellphone)){
+                        //     errors.select = 'El numero de telefono solo puede contener numeros y el simbolo de +.'
+                        // }
+                        //Validar numeros de telefono
+                        if(!values.cellphone){
+                            errors.cellphone = 'Por favor ingresa un numero valido'
+                        } else if(!/^\d{7}$/.test(values.cellphone)){
+                            errors.cellphone = 'El numero de tlf debe tener 7 digitos.'
+                        }
+                        //Validar contraseñas
+                        if(!values.password){
+                            errors.password = 'Por favor ingresa una contraseña'
+                        } else if(!/^(?=.*\W).{8,}$/.test(values.password)){
+                            errors.password = 'La contraseña debe contener 8 caracteres o mas y minimo un caracter especial'
+                        }
+                      //  Validar contraseñas
+                        if(!values.confirmPass){
+                            errors.confirmPass = 'Por favor ingresa una contraseña'
+                        } else if(! (values.password == values.confirmPass)){
+                            errors.confirmPass = 'Las contraseñas deben coincidir' 
+                        }
           return errors;
         }}
         onSubmit={async (values, { setSubmitting, resetForm }) => {
@@ -30,6 +92,7 @@ const Profile = () => {
             resetForm();
           } catch (error) {
             console.error('Error actualizando el perfil:', error);
+            setErrorMensaje('Error al actualizar el perfil. Por favor, inténtalo de nuevo.');
           }
           setSubmitting(false);
         }}
@@ -58,15 +121,7 @@ const Profile = () => {
         )}
       </Formik>
       {formularioEnviado && <p>Perfil actualizado con éxito!</p>}
-      <button onClick={() => logoutUser().then(() => {
-          console.log('Sesión cerrada con éxito');
-          // Aquí puedes redirigir al usuario a la página de inicio o de login
-        }).catch((error) => {
-          console.error('Error al intentar cerrar sesión:', error);
-          // Manejar el error, mostrando un mensaje al usuario si es necesario
-        })}>
-        Cerrar Sesión
-      </button>
+      <button onClick={handleLogout}>Cerrar Sesión</button>
     </div>
   );
 };
