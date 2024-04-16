@@ -7,7 +7,7 @@ import LoginPage from "../Pages/login/Login";
 const apiLocalURL = `${import.meta.env.VITE_BASEURL}/user`
 
 function registerPost(data) {
-    axios.post(`${apiLocalURL}/create`, data)
+    axios.post(`${apiLocalURL}`, data)
     .then((res) => {
         console.log('soy la data de respuesta:');
         console.log(res.data);
