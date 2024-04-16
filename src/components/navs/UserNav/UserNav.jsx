@@ -28,9 +28,10 @@ function NavLogin() {
         <section className="container">
 
           <Link className="nav-btn selected" to="/">Inicio</Link>
-          <Link className="nav-btn" to="/">Productos</Link>
-          <Link className="nav-btn" to="/">Contacto</Link>
-          <Link className="nav-btn" to="/">Nosostros</Link>
+          <Link className="nav-btn" to="/aboutus">Nosotros</Link>
+          <Link className="nav-btn" to="/contact">Contacto</Link>
+          <Link className="nav-btn" to="/sabeslopeor">Sabias que..?</Link>
+          
 
         </section>
         {
