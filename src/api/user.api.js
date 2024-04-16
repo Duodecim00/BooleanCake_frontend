@@ -29,15 +29,22 @@ function loginPost(data) {
 }
 
 
-function updateUser(data) {
-    axios.put(`${apiLocalURL}/update`, data)
-    .then((res) => {
-        console.log('Datos de usuario actualizados con éxito:');
-        console.log(res.data);
-    })
-    .catch((err) => console.log(err));
-}
 
+
+
+function updateUser(data) {
+    return new Promise((resolve, reject) => {
+        axios.put(`${apiLocalURL}/update`, data)
+        .then((res) => {
+            console.log('Datos de usuario actualizados con éxito:', res.data);
+            resolve(res.data); // Resuelve la promesa con los datos de respuesta
+        })
+        .catch((err) => {
+            console.error('Error actualizando los datos del usuario:', err);
+            reject(err); // Rechaza la promesa con el error
+        });
+    });
+}
  async function logoutUser() {
     try {
         // Destruye las cookies solo después de una respuesta exitosa del servidor
