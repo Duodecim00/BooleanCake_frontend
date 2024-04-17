@@ -1,6 +1,13 @@
 import axios from "axios";
 
 const apiLocalURL = 'http://localhost:7338/api/v1/ingredient'; 
+const axiosInstanceUser =  axios.create({   //Crear la instancia de axios
+    baseURL: `${import.meta.env.VITE_BASEURL}/user`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+  } )
 
 function createIngredient(data) {
     axios.post(`${apiLocalURL}`, data)
