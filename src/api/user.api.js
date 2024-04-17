@@ -1,9 +1,14 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import {createCookieRol, createCookieSession, destroyCookie} from "./cookie";
-import { redirect } from "react-router";
-import LoginPage from "../Pages/login/Login";
 
+const axiosInstanceUser =  axios.create({   //Crear la instancia de axios
+    baseURL: `${import.meta.env.VITE_BASEURL}/user`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+  } )
 const apiLocalURL = `${import.meta.env.VITE_BASEURL}/user`
 
 function registerPost(data) {
@@ -28,13 +33,9 @@ function loginPost(data) {
     .catch((err) => console.log(err));
 }
 
-
-
-
-
 function updateUser(data) {
     return new Promise((resolve, reject) => {
-        axios.put(`${apiLocalURL}/update`, data)
+        axiosInstanceUser.put(`/update`, data)
         .then((res) => {
             console.log('Datos de usuario actualizados con éxito:', res.data);
             resolve(res.data); // Resuelve la promesa con los datos de respuesta
@@ -47,8 +48,11 @@ function updateUser(data) {
 }
  async function logoutUser() {
     try {
-        // Destruye las cookies solo después de una respuesta exitosa del servidor
-        destroyCookie();
+        const response = await axiosInstanceUser.delete("/logout")
+        if (response.status==200) {
+            destroyCookie();
+            console.log("destrui la cookie");
+        }
         
     } catch (error) {
         console.error('Error al cerrar sesión:', error);
