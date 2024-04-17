@@ -6,7 +6,7 @@ import '../UserNav/UserNav.css'
 import Cookies from "js-cookie";
 
 function AdminNav(){
-    const rol = Cookies.get("rol");
+    const rol = Cookies.get("role");
     const region = import.meta.env.VITE_REGION;
     var primaryColor;
 
