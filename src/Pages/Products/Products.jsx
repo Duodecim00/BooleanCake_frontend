@@ -4,7 +4,7 @@ import SearchBar from '../../components/SearchBar/SearchBar.jsx';
 import { SearchResultsList } from '../../components/SearchBar/SearchResultsList/SearchResultsList.jsx';
 import ShowProducts from '../../components/ShowAllProducts/ShowAllProducts.jsx';
 import RenderNav from '../../components/navs/RenderNav/RenderNav.jsx';
-import { ProductProvider } from '../../contexts/ProductContext./ProductContext.jsx';
+// import { ProductProvider } from '../../contexts/ProductContext/ProductContext.jsx';
 
 
 const Products = () => {
