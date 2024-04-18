@@ -34,12 +34,12 @@ function App() {
             <Route exact path="/contact" element={<ContactoPage />} />
             <Route exact path="/sabeslopeor" element={<SabesLoPeorPage />} />  
               <Route exact path="/profile" element={<ProfilePage/>}/>
+              <Route exact path="/cart" element={<CartPage/>}/>
             
             {/*Vistas generales  */}
-            <Route element={<ProtectedRoute isAllowed={Cookies.get("rol")} rol={Cookies.get("rol")}/>}>
+            <Route element={<ProtectedRoute rol={Cookies.get("rol")}/>}>
 
               <Route exact path="/profile" element={<ProfilePage/>}/>
-              <Route exact path="/cart" element={<CartPage/>}/>
             </Route>   
 
           {/* Rutas exclusivas para admin */}
