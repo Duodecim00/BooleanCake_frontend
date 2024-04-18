@@ -48,8 +48,8 @@ function App() {
               />
             }
           >
-            <Route exact path="/products" element={<Products />} />
             <Route exact path="/adminInventory" element={<Inventory />} />
+            <Route exact path="/products" element={<Products />} />
           </Route>
           {/* Rutas exclusivas de rider */}
           <Route
