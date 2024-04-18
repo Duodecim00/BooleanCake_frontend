@@ -102,7 +102,13 @@ function ShowProducts() {
       )}
       {selectedItem && editModalOpen && (
         <div className="backdrop">
-          <div className="form_container">
+          <div className="form_container container-modal-edit-products">
+          <button
+                    className="gap-btn-edit-exit"
+                    onClick={handleCancel}
+                  >
+                    X
+                  </button>
             <Formik
               initialValues={selectedItem}
               // validate={(values)=>{
@@ -137,38 +143,42 @@ function ShowProducts() {
             >
               {({ errors }) => (
                 <Form className="container-form-grid_products">
+                  
                   <div className="form-grid-cell form-grid-cell-big">
                     <label htmlFor="name">Nombre</label>
-                    <Field type="name" id="name" name="name" placeholder="" />
+                    <Field  className="cosa" type="name" id="name" name="name" placeholder="" />
                   </div>
-                  <div className="form-grid-cell aparence-disable">
+                  <div className="form-grid-cell aparence-disable form-grip-gap-edit margin">
                     <label htmlFor="price">Precio</label>
                     <Field
+                      className="cosa"
                       type="number"
                       id="price"
                       name="price"
                       placeholder=""
                     />
                   </div>
-                  <div className="form-grid-cell aparence-disable">
+                  <div className="form-grid-cell aparence-disable form-grip-gap-edit">
                     <label htmlFor="storage">Unidad de medida</label>
                     <Field
+                      className="cosa"
                       type="text"
                       id="storage"
                       name="storage"
                       placeholder=""
                     />
                   </div>
-                  <div className="form-grid-cell aparence-disable">
-                    <label htmlFor="category">Unidad de medida</label>
+                  <div className="form-grid-cell aparence-disable form-grip-gap-edit margin">
+                    <label htmlFor="category">Category</label>
                     <Field
+                      className="cosa"
                       type="text"
                       id="category"
                       name="category"
                       placeholder=""
                     />
                   </div>
-                  <div className="form-grid-cell aparence-disable">
+                  <div className="form-grid-cell aparence-disable form-grip-gap-edit">
                     <label htmlFor="expireDate">Fecha de vencimiento</label>
                     <Field
                       type="text"
@@ -178,15 +188,11 @@ function ShowProducts() {
                     />
                     {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
                   </div>
-                  <button className="modal-products-submit" type="submit">
+                  <div>
+                    <button className="gap-btn-edit" type="submit">
                     Subir
                   </button>
-                  <button
-                    className="modal-products-submit"
-                    onClick={handleCancel}
-                  >
-                    Cancelar
-                  </button>
+                  </div>
                 </Form>
               )}
             </Formik>
