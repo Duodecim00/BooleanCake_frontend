@@ -65,7 +65,7 @@ function App() {
           <Route exact path="/menu" element={<MenuPage />} />
           <Route
             exact
-            path="/singleproduct"
+            path="/singleproduct/:id"
             element={<PageSingleProduct />}
           ></Route>
         </Routes>
