@@ -18,8 +18,8 @@ const Products = () => {
                       <SearchResultsList results={results}/>
                     </div>
                   </div>
-          <ShowProducts/>
           <PostModal/>
+          <ShowProducts/>
       </div>
 
         
