@@ -1,208 +1,148 @@
-
-.form-tittle_reg{
-    grid-column: 1/3;
-    font-family: "Rozha One", serif;
-    color:#FDAB4A;
-    font-weight: 400;
-    font-size: 64px;
-    margin-bottom: 5px;
-}
-
-.component-container_reg{
-    margin-top: -2%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 100px;
-    width: 66.66%; 
-    height: 80vh;
-}
-
-.form-container_reg{
-    margin-top: 15px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(4,1fr);
-    grid-column: 1/3;
-    grid-row: 2/5;
-    width: 70%;
-}
-
-.form-grid-cell{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.div-container{
+  max-width: 100%;
+  display: flex;
+  padding: 10px 100px;
+  text-align: start;
 
 }
 
-
-.form-grid-cell label{
-    color: #DFD9D9;
-    font-weight: 700;
-    font-size: 20px;
-
-}
-
-.form-grid-cell .input-register{
-    font-family: "Inter", sans-serif;
-    width: 300px;
-    height: 50px;
-    padding: 10px;
-    font-size: 16px;
-    outline: none;
-    margin-top: 8px;
-    border: none;
-    padding-left: 30px;
-    font-size: 18px;
-    border-radius: 20px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), inset 4px 4px 2px rgba(0, 0, 0, 0.4);
-    background-color: #ffffff;
-    color: #000000;
-    transition: all 0.2s ease-in-out;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+.profile-page{
+  border-color: #9E9E9E;
+  border-width: 1px;
+  border-style: solid;
+  display: flex;
+  background-color: white;
+  position: relative;
+  left: 5%;
+  width: 95%;
+  height: 1174px;
 }
 
 
-.form-grid-cell-btn{
-    grid-column: 1/3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.btn-submit_reg{
-    margin-top: 10px;
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 32px;
-    cursor: pointer;
+.profile-sidebar{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 30%;
+  border-style: solid;
+  border-left: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-width: 1px;
+  border-color: #9E9E9E;
 
-    padding: 20px 5px;
-    width: 40%;
-    height: 100%;
-    background-color: #000000;
-    color: #ffffff;
-
-    border-radius: 25px;
 }
 
-.btn-submit_reg:hover{
-    background-color: #ffffff;
-    color: #FDAB4A;
-    transition: 0.5s;
-    border: 2px solid #FDAB4A;
+.wtf{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
 }
 
-.form-text_reg{
-    margin-top: 10px;
-    font-weight: 400;
-    font-size: 16px;
+.my-profile-subtext-sidebar{
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
-.form-text-link_reg{
-    text-decoration: none;
-    color: #FDAB4A;
+.logout{
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: red;
 }
 
-.error-message {
-	color: #e92b2d;
-  background-color: #ffffff;
-  font-weight: 600;
-	font-size: 12px;;
-  text-align: center;
+.picture{
+  width: 150px;
+  height: 150px;
 }
 
-.error .input-register {
-  background-color: #ffcccc;
-  border: 2px solid #c91515; 
-}
-.error .input-register:focus {
-  caret-color:red;
+.options{
+  margin-top: 50px;
+  margin-left: 20px;
 }
 
-.form-grid-cell-btn .exito {
-	text-align: center;
-	font-size: 14px;
-	padding-top: 20px;
-	color: #02a802;
+.main-text{
+  font-family: "Inter";
+  font-size: 28px;
+  font-weight: 800;
 }
 
-  .select-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .phone-input-container {
-    display: flex;
-    align-items: center;
-
-    .cellphonecode-input_reg{
-      width: 32.5%;
-      border-radius: 20px 0px 0px 20px;
-      height: 70px;
-      box-shadow: inset 0 0 10px  rgba(0, 0, 0, 0.2), inset 4px 4px 2px rgba(0, 0, 0, 0.4);
-      -webkit-border-radius: 20px 0px 0px 20px;
-      -moz-border-radius: 20px 0px 0px 20px;
-      -ms-border-radius: 20px 0px 0px 20px;
-      -o-border-radius: 20px 0px 0px 20px;
+.profile-content{
+  position: relative;
+  background-color: transparent;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
 }
-    .cellphone-input_reg{
-      width: 50%;
-      border-radius: 0px 20px 20px 0px;
-      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), inset 0 4px 2px rgba(0, 0, 0, 0.4);
-      -webkit-border-radius: 0px 20px 20px 0px;
-      -moz-border-radius: 0px 20px 20px 0px;
-      -ms-border-radius: 0px 20px 20px 0px;
-      -o-border-radius: 0px 20px 20px 0px;
+
+.profile-header{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  height: 15%;
+  border-style: solid;
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-width: 1px;
+  border-color: #9E9E9E;
+  align-items: center;
 }
-  }
 
-  
+.profile-form{
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+}
 
+.my-profile{
+  font-family: "Inter";
+  font-size: 44px;
+  font-weight: 800;
+  margin-top: 30px;
+  margin-bottom: 27px;
+}
 
-/*Responsive Design*/
+.my-profile-subtext{
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 400;
+}
 
-@media (max-width: 768px) {
-    .component-container_reg {
-      padding: 40px 50px;
-      width: 100%;
-    }
-  
-    .form-container_reg {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(8, 1fr);
-      width: 90%;
-    }
-  
-    .form-grid-cell input {
-      width: 100%;
-    }
-  
-    .btn-submit_reg {
-      width: 60%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .component-container_reg {
-      padding: 20px;
-    }
-  
-    .form-container_reg {
-      width: 100%;
-    }
-  
-    .form-grid-cell input {
-      font-size: 16px;
-    }
-  
-    .btn-submit_reg {
-      font-size: 28px;
-      width: 80%;
-    }
-  }
+.input-cell{
+  width: 730px;
+  height: 79px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.input{
+  width: 805px;
+  height: 79px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  padding-left: 25px;
+}
+
+.cellphonecode-input{
+  width: 100px;
+  height: 79px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+}

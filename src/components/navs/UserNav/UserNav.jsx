@@ -79,13 +79,17 @@ function NavLogin() {
       {rol ? (
         <section>
           {/* <SearchBar/> */}
-          <Link>
+          <Link to="/profile">
             <span className="material-symbols-outlined">person</span>
           </Link>
+<<<<<<< HEAD
           <Link>
             <span className="material-symbols-outlined">shopping_cart</span>
           </Link>
           <Link>
+=======
+          <Link to="/menu">
+>>>>>>> DevBranch
             <span className="material-symbols-outlined">grid_view</span>
           </Link>
         </section>
