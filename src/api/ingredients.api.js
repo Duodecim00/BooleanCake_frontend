@@ -18,7 +18,11 @@ function createIngredient(data) {
     .catch((err) => console.log(err));
 }
 function deleteIngredient(id) {
-    axios.delete(`${apiLocalURL}/deleteIngredient/${id}`)
+    axios.delete(`${apiLocalURL}/deleteIngredient/${id}`, {headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    })
     .then((res) => {
         console.log(`Deleted ingredient with id ${id}`);
         console.log(res.data);

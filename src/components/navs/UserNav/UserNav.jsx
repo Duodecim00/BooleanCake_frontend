@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./UserNav.css";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import CartModal from "../../CartModal/CartModal";
 
 // import SearchBar from '../../SearchBar/SearchBar';
 function NavLogin() {

@@ -54,8 +54,8 @@ const PostModal = () => {
                     onSubmit={async (values, {resetForm})=>{
                       try{
                         
-                        const blob = await file.blob();
-                        const result = await uploadFile(blob);
+                          
+                        const result = await uploadFile(file);
                         console.log('soy la url',result);
                         const data = {
                             name:values.name,
