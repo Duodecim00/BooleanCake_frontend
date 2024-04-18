@@ -1,6 +1,23 @@
 
 import './MenuList.css'
+import { useState } from 'react';
+import { addToCart } from '../../api/cart.api';
+
 export default function ItemMenu(props){
+
+    const [isAdding, setIsAdding] = useState(false);
+
+    const handleAddToCart = async () => {
+        try {
+            setIsAdding(true);
+            await addToCart(props.name); // Llama a la función addToCart con el nombre del producto como parámetro
+            setIsAdding(false);
+            console.log('Producto añadido al carrito correctamente');
+        } catch (error) {
+            console.error('Error al agregar producto al carrito:', error);
+            setIsAdding(false);
+        }
+    };
 
         return(
                     <div className="item_container">
@@ -19,7 +36,9 @@ export default function ItemMenu(props){
                                 <button onClick={console.log('hola')} className='plusButton'><span style={{color:'white',backgroundColor:'black'}} className="material-symbols-outlined">arrow_forward_ios</span></button>
                             </div>
                             <div className='add_container'>
-                                <button className='addProduct'>Agregar al carrito</button>
+                                <button onClick={handleAddToCart} className='addProduct' disabled={isAdding}>
+                                    {isAdding ? 'Agregando...' : 'Agregar al carrito'}
+                                </button>
                             </div>
                         </div>
                     </div>
