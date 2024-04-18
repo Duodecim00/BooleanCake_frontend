@@ -61,24 +61,23 @@ function ShowProducts() {
       <h1>Productos</h1>
       {Array.isArray(data) ? (
         data.map((item) => (
-          <div key={item._id}>
-            <div className="slide">
-              <div className="block">
-                <p>{item.name}</p>
+          <div className="admin-product-container" key={item._id}>
+              <div className="grid-admin-product">
+                <p className="grid-admin-product-text">{item.name}</p>
               </div>
-              <div className="block">
-                <p>Category: {item.category}</p>
+              <div className="grid-admin-product">
+                <p className="grid-admin-product-text">Category: <span className="grid-admin-product-text-info">{item.category}</span></p>
               </div>
-              <div className="block">
-                <p>Price: {item.price}</p>
+              <div className="grid-admin-product">
+                <p className="grid-admin-product-text">Price: <span className="grid-admin-product-text-info">{item.price}</span></p>
               </div>
-              <div className="block">
-                <p>Stock: {item.storage}</p>
+              <div className="grid-admin-product">
+                <p className="grid-admin-product-text">Stock: <span className="grid-admin-product-text-info"> {item.storage}</span></p>
               </div>
-              <div className="block">
-                <p>Fecha de vencimiento: {item.expireDate}</p>
+              <div className="grid-admin-product">
+                <p className="grid-admin-product-text">Fecha de vencimiento: <span className="grid-admin-product-text-info">{item.expireDate}</span></p>
               </div>
-              <div className="block">
+              <div className="grid-admin-product">
                 <button className="btnoption" onClick={() => handleEdit(item)}>
                   <span className="material-symbols-outlined">edit</span>
                 </button>
@@ -86,15 +85,16 @@ function ShowProducts() {
                   className="btnoption"
                   onClick={() => handleDelete(item._id)}
                 >
-                  Borrar
+                  <span class="material-symbols-outlined ">
+                  delete
+                  </span>
                 </button>
               </div>
-              <div className="block">
+              <div className="grid-admin-product">
                 <div className="sample">
-                  <img src={item.image} alt={item.name} />
+                  <img className="admin-product-img" src={item.image} alt={item.name} />
                 </div>
               </div>
-            </div>
           </div>
         ))
       ) : (
