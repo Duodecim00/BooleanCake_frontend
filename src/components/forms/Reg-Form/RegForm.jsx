@@ -1,5 +1,5 @@
 import './RegForm.css';
-import {Link} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import { registerPost } from "../../../api/user.api";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
@@ -82,6 +82,8 @@ function RegForm(){
 
 
                             registerPost(data);
+                            // Este navigate deberia de redirigir a la vista de verificacion de codigo
+                            <Navigate to="/login"/>
                             console.log('hola soy el data:');
 
                         }catch(e){

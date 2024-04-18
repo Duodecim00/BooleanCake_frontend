@@ -46,12 +46,16 @@
         border: none;
         padding-left: 30px;
         font-size: 18px;
-        border-radius: 50px;
+        border-radius: 20px;
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2), inset 4px 4px 2px rgba(0, 0, 0, 0.4);
         background-color: #ffffff;
         color: #000000;
         transition: all 0.2s ease-in-out;
-    }
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+}
 
     .container-form-grid_log{
         margin-top: 30px;
@@ -82,7 +86,11 @@
         background-color: #000000;
         color: #ffffff;
         border-radius: 25px;
-    }
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+}
 
     .btn-submit_log:hover{
         background-color: #ffffff;

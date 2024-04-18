@@ -1,0 +1,184 @@
+
+h1,h2,label{
+    background: none;
+}
+.grid-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.card1{
+    border-width: 1px;
+    border: 1px solid #DFD9D9;
+    height: auto;
+    width: 200px;
+    background-color: #F7F5F0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-bottom: 0px;
+
+    
+}
+.card2{
+    border-width: 1px;
+    border: 1px solid #DFD9D9;
+    height: auto;
+    width: 200px;
+    background-color: #F7F5F0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+input{
+    margin-top: -40px;
+    height: 15px;
+    vertical-align: middle;
+}
+
+.Option{
+    margin-top: 40px;
+    margin-left: 15px;
+    font-size: 15px;
+    background: none;
+}
+
+.message{
+    font-size: 12px;
+    background: none;
+    margin-left: 15px;
+    color: #667085;
+}
+
+
+.item1{
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 35px;
+}
+
+.inputbox{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 70%;
+    border-radius: 15px;
+    border: 1px solid #000000;
+}
+
+.icon{
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 3px;
+    background: none;
+}
+
+.inputData{
+    margin-bottom: -40px;
+    width: 300px;
+    border-radius: 15px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.mapa{
+    width: 400px;
+    height: 300px;
+    border: 1px solid #000000;
+}
+
+p{
+    background: none;
+}
+
+.item2{
+    background: #F7F5F0;
+    width: 100%;
+    padding-left: 35px;
+}
+
+.productslist{
+    background: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.imgkakes{
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.imgproducts{
+    background: none;
+}
+
+.infoproducts{
+    margin-left: 15px;
+    background: none;  
+
+    .price{
+        color: #FDAB4A;
+    }
+}
+
+.imgkakes{
+    background: none;
+}
+
+.calculationbill{
+    background: none;
+    width: 100%;
+    border-bottom-width: 1px solid #DFD9D9;
+}
+
+.calculation{
+    background: none;
+    border-bottom: 1px solid #DFD9D9;
+    width: 430px;
+    margin-bottom: 5px;
+}
+
+.availablebalance{   
+    width: 100%;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+    }
+
+.description{
+    width: 150px;
+}
+.balance{
+    margin-left: 200px;
+}
+
+.total{
+    margin-left: 200px;
+    font-size: 25px;
+    color: #FDAB4A;
+}
+
+.btnpay{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 20px 0;
+    width: 80%;
+    height: 80px;
+    color: #ffffff;
+    background: #000000;
+    border-radius: 25px;
+}
+
+.btnpay:hover{
+    background-color: #ffffff;
+    color: #FDAB4A;
+    transition: 0.5s;
+    border: 2px solid #FDAB4A;
+}

@@ -6,7 +6,7 @@ import '../UserNav/UserNav.css'
 import Cookies from "js-cookie";
 
 function AdminNav(){
-    const rol = Cookies.get("rol");
+    const rol = Cookies.get("role");
     const region = import.meta.env.VITE_REGION;
     var primaryColor;
 
@@ -47,7 +47,7 @@ function AdminNav(){
             {
                 rol ? (
                 <section>
-                    <Link><span className="material-symbols-outlined">person</span></Link>
+                    <Link to="/profile"><span className="material-symbols-outlined">person</span></Link>
                     <Link><span className="material-symbols-outlined">grid_view</span></Link>
                 </section>
                 ): (

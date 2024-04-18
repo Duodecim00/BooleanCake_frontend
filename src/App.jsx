@@ -16,8 +16,10 @@ import PageSingleProduct from './Pages/PageSingleProduct/PageSingleProduct.jsx'
 import ContactoPage from './Pages/Contacto/Contacto.jsx';
 import SabesLoPeorPage from './Pages/SabesLoPeor/SabesLoPeor.jsx';
 import CartPage from './Pages/Cart/Cart.jsx';
+import Bill from './Pages/Bill/Bill.jsx';
 
-function App() {  
+
+function App() {
   return (
     <>
         <SplashScreen/>        
@@ -28,29 +30,62 @@ function App() {
             <Route exact path="/" element={<InicioPage/>}/>
             <Route exact path="/aboutus" element={<AboutusPage/>}/>
             <Route exact path="/test" element={<Testfb/>}/>
-            <Route exact path="/contact" element={<ContactoPage/>}/>
-            <Route exact path="/sabeslopeor" element={<SabesLoPeorPage/>}/>
-            
+            <Route exact path="/bill" element={<Bill/>}/>
+            <Route exact path="/contact" element={<ContactoPage />} />
+            <Route exact path="/sabeslopeor" element={<SabesLoPeorPage />} />  
             {/*Vistas generales  */}
             <Route element={<ProtectedRoute isAllowed={Cookies.get("rol")} rol={Cookies.get("rol")}/>}>
               <Route exact path="/profile" element={<ProfilePage/>}/>
               <Route exact path="/cart" element={<CartPage/>}/>
             </Route>   
 
-            {/* Rutas exclusivas para admin */}
-            <Route element={<ProtectedRoute isAllowed={Cookies.get("rol") && Cookies.get("rol")=='admin'} rol={Cookies.get("rol")}/>}>
-                  <Route  exact path="/products" element={<Products />}/>
-                  <Route exact path="/adminInventory" element={<Inventory/>}/>
-            </Route>   
-            {/* Rutas exclusivas de rider */}
-            <Route element={<ProtectedRoute isAllowed={Cookies.get("rol") && Cookies.get("rol")=='rider'} rol={Cookies.get("rol")}/>}>
-            </Route>   
-            <Route exact path="/menu" element={<MenuPage/>}/>
-            <Route exact path="/singleproduct" element={<PageSingleProduct/>}></Route>
-          </Routes>
-        </Router>
-      </>
+          {/*Vistas generales  */}
+          <Route
+            element={
+              <ProtectedRoute
+                isAllowed={Cookies.get("role")}
+                rol={Cookies.get("role")}
+              />
+            }
+          >
+            <Route exact path="/profile" element={<ProfilePage />} />
+          </Route>
+
+          {/* Rutas exclusivas para admin */}
+          <Route
+            element={
+              <ProtectedRoute
+                isAllowed={
+                  Cookies.get("role") && Cookies.get("role") == "admin"
+                }
+                rol={Cookies.get("role")}
+              />
+            }
+          >
+            <Route exact path="/adminInventory" element={<Inventory />} />
+            <Route exact path="/products" element={<Products />} />
+          </Route>
+          {/* Rutas exclusivas de rider */}
+          <Route
+            element={
+              <ProtectedRoute
+                isAllowed={
+                  Cookies.get("role") && Cookies.get("role") == "rider"
+                }
+                rol={Cookies.get("role")}
+              />
+            }
+          ></Route>
+          <Route exact path="/menu" element={<MenuPage />} />
+          <Route
+            exact
+            path="/singleproduct/:id"
+            element={<PageSingleProduct />}
+          ></Route>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
-export default App
+export default App;

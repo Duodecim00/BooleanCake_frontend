@@ -9,6 +9,8 @@
     border-radius: 25px;
     padding: 30px 50px;
     cursor: pointer;
+    margin: 50px;
+    width: 50%;
 
     &:hover{
     border: 1px solid #FDAB4A;
@@ -123,8 +125,4 @@
     color: red;
     background-color: #FFFFFF;
     border: 2px solid red;
-}
-
-.modal-product-img-container{
-    
 }

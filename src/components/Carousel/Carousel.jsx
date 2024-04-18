@@ -52,7 +52,7 @@ export default function CarouselProducts(){
       },[]);
 
       const product = productData.map( (item) =>(
-        <ProductCarousel name={item.name} url={item.image} price={item.price}/>
+        <ProductCarousel id={item._id} name={item.name} url={item.image} price={item.price}/>
       ))
 
       return(
