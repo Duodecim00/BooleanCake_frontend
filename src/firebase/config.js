@@ -20,11 +20,13 @@ const metadata = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
-const namePicture = v4();
+// const namePicture = v4();
+
+
 export async function uploadFile(file) {
-    const storageRef = ref(storage, namePicture)
-    // const storageRef = ref(storage, 'arch')
-    await uploadBytes(storageRef, file)
-    const url = getDownloadURL(storageRef)
+    // const storageRef = ref(storage, v4()+ `.png`)
+    const storageRef = ref(storage, 'hola.png')
+    const xd = await uploadBytes(storageRef, file)
+    const url = await getDownloadURL(xd.ref)
     return url    
 }

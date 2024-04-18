@@ -65,11 +65,8 @@ const PostModal = () => {
                             region: region,
                             image: result
                         }
-
-                        const jason = JSON.stringify(data)
-                        console.log(jason);
-                        console.log(typeof(data.price));
-                        createProductsPost(data);
+                        console.log(values);
+                        await createProductsPost(data);
                         <Navigate to="/products"></Navigate>
                       }
                       catch(error){
@@ -154,7 +151,7 @@ const PostModal = () => {
                                 />
                             </div>
                             <div className="modal-product-img-container">
-                              <input className='modal-product-img' type="file" name="image" id="image" onChange={e => uploadFile(e.target.files[0])}></input>
+                              <input className='modal-product-img' accept="image/*"type="file" name="image" id="image" onChange={e => uploadFile(e.target.files[0])}></input>
                                 {/* <ErrorMessage name="password" component={() => (<div className="error">{errors.password}</div>)} /> */}
                             </div>
                             <div className='modal-product-btn-container'>
