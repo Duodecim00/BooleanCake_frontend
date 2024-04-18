@@ -54,7 +54,7 @@ const PostModal = () => {
                     onSubmit={async (values, {resetForm})=>{
                       try{
                         const result = await uploadFile(file);
-                        console.log(result);
+                        console.log('soy la url',result);
                         const data = {
                             name:values.name,
                             stock:values.stock,

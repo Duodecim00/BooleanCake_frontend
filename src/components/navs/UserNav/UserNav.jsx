@@ -81,6 +81,9 @@ function NavLogin() {
             <span className="material-symbols-outlined">person</span>
           </Link>
           <Link>
+            <span className="material-symbols-outlined">shopping_cart</span>
+          </Link>
+          <Link>
             <span className="material-symbols-outlined">grid_view</span>
           </Link>
         </section>
