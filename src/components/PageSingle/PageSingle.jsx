@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import "./PageSingle.css"
 import img from "../../assets/images/band-regimg.jpg"
