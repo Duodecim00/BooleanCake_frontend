@@ -31,22 +31,11 @@ function App() {
             <Route exact path="/bill" element={<Bill/>}/>
             <Route exact path="/contact" element={<ContactoPage />} />
             <Route exact path="/sabeslopeor" element={<SabesLoPeorPage />} />  
+            
             {/*Vistas generales  */}
             <Route element={<ProtectedRoute isAllowed={Cookies.get("rol")} rol={Cookies.get("rol")}/>}>
               <Route exact path="/profile" element={<ProfilePage/>}/>
             </Route>   
-
-          {/*Vistas generales  */}
-          <Route
-            element={
-              <ProtectedRoute
-                isAllowed={Cookies.get("role")}
-                rol={Cookies.get("role")}
-              />
-            }
-          >
-            <Route exact path="/profile" element={<ProfilePage />} />
-          </Route>
 
           {/* Rutas exclusivas para admin */}
           <Route
