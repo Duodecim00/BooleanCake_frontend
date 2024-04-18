@@ -2,6 +2,13 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import {createCookieRol, createCookieSession, destroyCookie} from "./cookie";
 
+const axiosInstanceUser =  axios.create({   //Crear la instancia de axios
+    baseURL: `${import.meta.env.VITE_BASEURL}/user`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+  } )
 const apiLocalURL = `${import.meta.env.VITE_BASEURL}/user`
 
 function registerPost(data) {
@@ -26,39 +33,30 @@ function loginPost(data) {
     .catch((err) => console.log(err));
 }
 
-
 function updateUser(data) {
-    axios.put(`${apiLocalURL}/update`, data)
-    .then((res) => {
-        console.log('Datos de usuario actualizados con éxito:');
-        console.log(res.data);
-    })
-    .catch((err) => console.log(err));
+    return new Promise((resolve, reject) => {
+        axiosInstanceUser.put(`/update`, data)
+        .then((res) => {
+            console.log('Datos de usuario actualizados con éxito:', res.data);
+            resolve(res.data); // Resuelve la promesa con los datos de respuesta
+        })
+        .catch((err) => {
+            console.error('Error actualizando los datos del usuario:', err);
+            reject(err); // Rechaza la promesa con el error
+        });
+    });
 }
-
-
-
-  // Función para cerrar sesión del usuario
-  function logoutUser() {
-    /*
-    destroy cookie esta afuera y antes del try porque no funciona el logout, cuaando lo
-    arregles pones el destroy despues de la peticion al backend, porque lo importante es deshacer la session del backend
-    y despues la del front
-    */
-
-    // lee el comentario el primer comentario DENTRO DE LA FUNCION
-    destroyCookie();
-    return new Promise(async (resolve, reject) => {
-        try {
-            await axios.delete(`${apiLocalURL}/logout`, { withCredentials: true });
-            // lee el comentario el primer comentario DENTRO DE LA FUNCION
-        // Aquí puedes manejar acciones adicionales después del cierre de sesión, como redirigir al usuario
-        resolve();
-      } catch (error) {
-          // lee el comentario el primer comentario DENTRO DE LA FUNCION
+ async function logoutUser() {
+    try {
+        const response = await axiosInstanceUser.delete("/logout")
+        if (response.status==200) {
+            destroyCookie();
+            console.log("destrui la cookie");
+        }
+        
+    } catch (error) {
         console.error('Error al cerrar sesión:', error);
-        reject(error); // Propaga el error para manejarlo en el componente
+        throw error; // Propaga el error para ser manejado por el caller
     }
-});
-  }
+}
   export { registerPost, loginPost, updateUser, logoutUser };

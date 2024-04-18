@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import {Navigate} from "react-router-dom"
 import { createProductsPost } from '../../api/products.api';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
 import './ModalAddProducts.css'
 import { uploadFile } from '../../firebase/config';
-
 const PostModal = () => {
   const pred = 'Venezuela'
   const [file, setFile] = useState(null)
@@ -70,13 +70,12 @@ const PostModal = () => {
                         console.log(jason);
                         console.log(typeof(data.price));
                         createProductsPost(data);
-
+                        <Navigate to="/products"></Navigate>
                       }
                       catch(error){
                         console.error(error)
                         }
                         handleCloseModal();
-                        resetForm();
                         // cambiarFormularioEnviado(true);
                         // setTimeout(() => cambiarFormularioEnviado(false), 5000);
                     }}

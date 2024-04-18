@@ -1,10 +1,9 @@
-import React from 'react';
 import "./Footer.css"
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { FaPhone } from "react-icons/fa6";
-function Footer(props) {
+function Footer() {
     return <>
             <div className='footer'>
                 <h className="footerHeaderText">Más de 91 recetas disponibles</h>
