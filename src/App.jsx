@@ -13,6 +13,7 @@ import Cookies from 'js-cookie';
 import MenuPage from './Pages/Menu/Menu.jsx';
 import AboutusPage from './Pages/Aboutus/Aboutus.jsx';
 import PageSingleProduct from './Pages/PageSingleProduct/PageSingleProduct.jsx'
+import Bill from './Pages/Bill/Bill.jsx';
 
 function App() {  
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/" element={<InicioPage/>}/>
             <Route exact path="/aboutus" element={<AboutusPage/>}/>
             <Route exact path="/test" element={<Testfb/>}/>
+            <Route exact path="/bill" element={<Bill/>}/>
             
             {/*Vistas generales  */}
             <Route element={<ProtectedRoute isAllowed={Cookies.get("rol")} rol={Cookies.get("rol")}/>}>

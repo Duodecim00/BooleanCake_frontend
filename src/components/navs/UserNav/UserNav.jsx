@@ -1,6 +1,7 @@
 import './UserNav.css';
 import {Link} from "react-router-dom";
 import Cookies from "js-cookie";
+
 // import SearchBar from '../../SearchBar/SearchBar';
 function NavLogin() {
   const rol = Cookies.get("rol");

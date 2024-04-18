@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, } from 'react';
 import {FaSearch} from "react-icons/fa"
 import './SearchBar.css'
-import {getAllProducts ,searchProduct } from '../../api/products.api';
+import {getAllProducts,} from '../../api/products.api';
 
 
 function SearchBar({setResults}){
