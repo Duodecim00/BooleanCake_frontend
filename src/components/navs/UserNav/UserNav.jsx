@@ -77,7 +77,7 @@ function NavLogin() {
       {rol ? (
         <section>
           {/* <SearchBar/> */}
-          <Link>
+          <Link to="/profile">
             <span className="material-symbols-outlined">person</span>
           </Link>
           <Link>

@@ -39,7 +39,7 @@ const Profile = () => {
           <div className='my-profile-subtext-sidebar'>Fotografía</div>
           <div className='my-profile-subtext-sidebar'>Métodos de pago</div>
           <div className='my-profile-subtext-sidebar'>Notificaciones</div>
-          <div className='logout'>Cerrar cuenta</div>
+          <div onClick={handleLogout} className='logout'>Cerrar cuenta</div>
           </div>
           
         

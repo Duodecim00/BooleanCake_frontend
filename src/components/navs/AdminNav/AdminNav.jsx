@@ -47,7 +47,7 @@ function AdminNav(){
             {
                 rol ? (
                 <section>
-                    <Link><span className="material-symbols-outlined">person</span></Link>
+                    <Link to="/profile"><span className="material-symbols-outlined">person</span></Link>
                     <Link><span className="material-symbols-outlined">grid_view</span></Link>
                 </section>
                 ): (
