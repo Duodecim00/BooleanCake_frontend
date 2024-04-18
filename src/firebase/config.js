@@ -13,7 +13,7 @@ const firebaseConfig = {
     messagingSenderId: import.meta.env.VITE_MESSAGINGSENDER,
     appId: import.meta.env.VITE_APPID
 };
-const metadata = {
+const metaData = {
     contentType: 'image/jpeg'
   };
 
@@ -25,8 +25,11 @@ export const storage = getStorage(app);
 
 export async function uploadFile(file) {
     // const storageRef = ref(storage, v4()+ `.png`)
-    const storageRef = ref(storage, 'hola.png')
+    const storageRef = ref(storage, v4())
     const xd = await uploadBytes(storageRef, file)
+    console.log('soy xd:', xd);
+    console.log('soy xd:', xd);
     const url = await getDownloadURL(xd.ref)
-    return url    
+    console.log('soy la url en la funcion:',url);
+    return url      
 }

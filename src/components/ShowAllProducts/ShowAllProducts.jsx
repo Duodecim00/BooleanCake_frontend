@@ -85,7 +85,7 @@ function ShowProducts() {
                   className="btnoption"
                   onClick={() => handleDelete(item._id)}
                 >
-                  <span class="material-symbols-outlined ">
+                  <span className="material-symbols-outlined ">
                   delete
                   </span>
                 </button>

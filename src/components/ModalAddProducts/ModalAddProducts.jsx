@@ -53,7 +53,9 @@ const PostModal = () => {
                     // }}
                     onSubmit={async (values, {resetForm})=>{
                       try{
-                        const result = await uploadFile(file);
+                        
+                        const blob = await file.blob();
+                        const result = await uploadFile(blob);
                         console.log('soy la url',result);
                         const data = {
                             name:values.name,
@@ -65,7 +67,8 @@ const PostModal = () => {
                             region: region,
                             image: result
                         }
-                        console.log(values);
+                        data.
+                        console.log(data);
                         await createProductsPost(data);
                         <Navigate to="/products"></Navigate>
                       }
