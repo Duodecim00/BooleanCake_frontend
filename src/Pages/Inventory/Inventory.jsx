@@ -8,8 +8,8 @@ function Inventory(){
         <>
             <div className="products-container">
                 <RenderNav/>
-                <ShowIngredient/>
                 <ModalIngredient/>
+                <ShowIngredient/>
             </div>
         </>
     )
