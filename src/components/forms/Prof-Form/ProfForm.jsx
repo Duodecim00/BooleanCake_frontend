@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate de react-router-dom para la redirección
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { updateUser, logoutUser } from '../../../api/user.api'; // Asegúrate de ajustar la ruta de importación según tu estructura
+import { CgProfile } from "react-icons/cg";
 import './ProfForm.css';
 
 const Profile = () => {
@@ -21,10 +22,36 @@ const Profile = () => {
 };
 
   return (
-    <div className="component-container_reg" >
-      <h2 className="form-tittle_reg" >Editar Perfil</h2>
-      {errorMensaje && <p className="error">{errorMensaje}</p>}
-      <Formik
+    <div className="div-container">
+
+
+      <div className='profile-page'>
+
+        <div className='profile-sidebar'>
+
+          <div className='wtf'>
+          <CgProfile className='picture'/>
+          <div className='main-text'>Sophia Molina</div>
+          </div>
+        
+          <div className='options'>
+          <div className='my-profile-subtext-sidebar'>Mi perfil</div>
+          <div className='my-profile-subtext-sidebar'>Fotografía</div>
+          <div className='my-profile-subtext-sidebar'>Métodos de pago</div>
+          <div className='my-profile-subtext-sidebar'>Notificaciones</div>
+          <div className='logout'>Cerrar cuenta</div>
+          </div>
+          
+        
+        </div>
+
+        <div className='profile-content'>
+        <div className='profile-header'>
+          <div className='my-profile'>Mi Perfil</div>
+          <div className='my-profile-subtext'>Agrega información sobre ti</div>
+        </div>
+        <div className='profile-form'>
+        <Formik
         initialValues={{
           name: '',
           lastname: '',
@@ -99,26 +126,26 @@ const Profile = () => {
       }}
       >
         {({ isSubmitting, errors, touched }) => (
-          <Form className="form-container_reg">
+          <Form className="profile-form">
 
-            <div className={`form-grid-cell ${touched.name && errors.name ? 'error':''}`}>
-                <label htmlFor="name">Nombre</label>
+            <div style={{marginLeft:'67px',marginBottom:'30px'}} className={`form-grid-cell ${touched.name && errors.name ? 'error':''}`}>
+                <div className='main-text'>Nombre</div>
                 {/* Field contiene todos los elementos handle, blur, etc. Cotenidos dentro de el */}
                 <Field 
                     type="text" 
                     id="name" 
                     name="name" 
-                    className={`input-register ${touched.name && errors.name ? 'error' : ''}`}
+                    className={`input ${touched.name && errors.name ? 'error' : ''}`}
                     placeholder=""
                 />
                 {touched.name && errors.name &&( <ErrorMessage name="name" component={() => (<div className="error-message">{errors.name}</div>)} />)}
             </div>
 
-            <div className={`form-grid-cell ${touched.lastname && errors.lastname ? 'error':''}`}>
-                    <label htmlFor="lastname">Apellido</label>
+            <div style={{marginLeft:'67px',marginBottom:'30px'}} className={`form-grid-cell ${touched.lastname && errors.lastname ? 'error':''}`}>
+            <div className='main-text'>Apellido</div>
                     <Field
                         // className="input-register"
-                        className={`input-register ${touched.lastname && errors.lastname ? 'error' : ''}`}
+                        className={`input ${touched.lastname && errors.lastname ? 'error' : ''}`}
                         type="text" 
                         id="lastname" 
                         name="lastname" 
@@ -128,10 +155,10 @@ const Profile = () => {
 
               </div>
 
-              <div className={`form-grid-cell ${touched.cellphone && errors.cellphone ? 'error':''}`}>
-              <label htmlFor="cellphone">Número de tlf</label>
-              <div className="phone-input-container">
-                  <Field as="select" id="option" name="select" className="input-register selector cellphonecode-input_reg">
+              <div style={{marginLeft:'67px',marginBottom:'30px'}} className={`form-grid-cell ${touched.cellphone && errors.cellphone ? 'error':''}`}>
+              <div className='main-text'>Télefono</div>
+              <div className="input-container">
+                  <Field as="select" id="option" name="select" className="cellphonecode-input">
                       <option value="">04--</option>
                       <option value="0424">0424</option>
                       <option value="0414">0414</option>
@@ -144,17 +171,17 @@ const Profile = () => {
                             id="cellphone" 
                             name="cellphone" 
                             placeholder="" 
-                            className="input-register cellphone-input_reg"
+                            className="input-cell"
                         />
               </div>
                     {touched.cellphone && errors.cellphone &&( <ErrorMessage name="cellphone" component={() => (<div className="error-message">{errors.cellphone}</div>)} />)}
                     {touched.select && errors.select &&( <ErrorMessage name="select" component={() => (<div className="error-message">{errors.select}</div>)} />)}
               </div>
 
-              <div className={`form-grid-cell ${touched.email && errors.email ? 'error':''}`}>
-                <label htmlFor="email">Correo Electronico</label>
+              <div style={{marginLeft:'67px',marginBottom:'30px'}} className={`form-grid-cell ${touched.email && errors.email ? 'error':''}`}>
+              <div className='main-text'>Email</div>
                 <Field
-                    className={`input-register ${touched.email && errors.email ? 'error' : ''}`}
+                    className={`input ${touched.email && errors.email ? 'error' : ''}`}
                     type="email" 
                     id="email" 
                     name="email" 
@@ -163,10 +190,10 @@ const Profile = () => {
                  {touched.email && errors.email &&( <ErrorMessage name="email" component={() => (<div className="error-message">{errors.email}</div>)} />)}
                           </div>
 
-            <div className={`form-grid-cell ${touched.password && errors.password ? 'error':''}`}>
-            <label htmlFor="password">Contraseña</label>
+            <div style={{marginLeft:'67px',marginBottom:'30px'}} className={`form-grid-cell ${touched.password && errors.password ? 'error':''}`}>
+            <div className='main-text'>Contraseña nueva</div>
             <Field
-                className={`input-register ${touched.password && errors.password ? 'error' : ''}`}
+                className={`input ${touched.password && errors.password ? 'error' : ''}`}
                 type="password" 
                 id="password" 
                 name="password" 
@@ -176,28 +203,23 @@ const Profile = () => {
                             
             </div>
 
-            <div className='form-grid-cell-btn'>
+            <div style={{marginLeft:'67px'}} className='form-grid-cell-btn'>
             <button type="submit"   className="btn-submit_reg" disabled={isSubmitting}>
               Actualizar Datos
             </button>
             </div>
             {formularioEnviado && <p>Perfil actualizado con éxito!</p>}
-            <div className='form-grid-cell-btn'>
-
-            <button onClick={handleLogout}  className="btn-submit_reg" >
-              
-              Cerrar Sesión
-             
-             </button>
-
-
+            <div className='form-grid-cell-btn'> 
             </div>
           
           </Form>
         )}
       </Formik>
-      
-      
+        </div>
+        </div>
+      </div>
+
+
     </div>
   );
 };
