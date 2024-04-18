@@ -60,4 +60,4 @@ async function obtenerdatos() {
     );
 }
 
-export default PageSingle;
+export default PageSingle;//

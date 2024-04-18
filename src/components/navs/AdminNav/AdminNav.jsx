@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import './AdminNav.css'
 import '../UserNav/UserNav.css'
 import Cookies from "js-cookie";
-
+//
 function AdminNav(){
     const rol = Cookies.get("role");
     const region = import.meta.env.VITE_REGION;
@@ -48,11 +48,8 @@ function AdminNav(){
                 rol ? (
                 <section>
                     <Link to="/profile"><span className="material-symbols-outlined">person</span></Link>
-<<<<<<< HEAD
-                    <Link><span className="material-symbols-outlined">grid_view</span></Link>
-=======
                     <Link to="/menu"><span className="material-symbols-outlined">grid_view</span></Link>
->>>>>>> DevBranch
+
                 </section>
                 ): (
                     <h1>puto</h1>

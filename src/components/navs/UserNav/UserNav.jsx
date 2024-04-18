@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./UserNav.css";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
-import CartModal from "../../CartModal/CartModal";
-
+// import CartModal from "../../CartModal/CartModal";
+//
 // import SearchBar from '../../SearchBar/SearchBar';
 function NavLogin() {
   const [clickCount, setClickCount] = useState(0);
@@ -82,14 +82,11 @@ function NavLogin() {
           <Link to="/profile">
             <span className="material-symbols-outlined">person</span>
           </Link>
-<<<<<<< HEAD
-          <Link>
+          <Link to="/cart">
             <span className="material-symbols-outlined">shopping_cart</span>
           </Link>
-          <Link>
-=======
+
           <Link to="/menu">
->>>>>>> DevBranch
             <span className="material-symbols-outlined">grid_view</span>
           </Link>
         </section>
