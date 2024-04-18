@@ -15,6 +15,7 @@ import AboutusPage from './Pages/Aboutus/Aboutus.jsx';
 import PageSingleProduct from './Pages/PageSingleProduct/PageSingleProduct.jsx'
 import ContactoPage from './Pages/Contacto/Contacto.jsx';
 import SabesLoPeorPage from './Pages/SabesLoPeor/SabesLoPeor.jsx';
+import CartPage from './Pages/Cart/Cart.jsx';
 
 function App() {  
   return (
@@ -33,6 +34,7 @@ function App() {
             {/*Vistas generales  */}
             <Route element={<ProtectedRoute isAllowed={Cookies.get("rol")} rol={Cookies.get("rol")}/>}>
               <Route exact path="/profile" element={<ProfilePage/>}/>
+              <Route exact path="/cart" element={<CartPage/>}/>
             </Route>   
 
             {/* Rutas exclusivas para admin */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import "./PageSingle.css"
 import img from "../../assets/images/band-regimg.jpg"
 
