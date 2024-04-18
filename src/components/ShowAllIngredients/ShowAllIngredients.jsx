@@ -41,25 +41,23 @@ function ShowIngredient() {
             <h1>Ingredientes</h1>
             {Array.isArray(data) ? (
                 data.map((item) => (
-                <div key={item._id}>
-                    <div className='slide'>
-                        <div className='block'>
+                <div className="admin-product-container" key={item._id}>
+                        <div className="grid-admin-product">
                             <p>{item.name}</p>
                         </div>
-                        <div className='block'>
-                            <p>Price: {item.price}</p>
+                        <div className="grid-admin-product">
+                            <p className="grid-admin-product-text">Price: {item.price}</p>
                         </div>
-                        <div className='block'>
-                            <p>Stock: {item.stock}</p>
+                        <div className="grid-admin-product">
+                            <p className="grid-admin-product-text">Stock: {item.stock}</p>
                         </div>
-                        <div className='block'>
-                            <p>Unidad de medida: {item.unitMeasure}</p>
+                        <div className="grid-admin-product">
+                            <p className="grid-admin-product-text">Unidad de medida: {item.unitMeasure}</p>
                         </div>
-                        <div className='block'>
+                        <div className="grid-admin-product">
                             <button className='btnoption' onClick={() => handleEdit(item) }>Editar</button>
                             <button className='btnoption' onClick={() => handleDelete(item._id)}>Borrar</button>
                         </div>
-                    </div>
                 </div>
                 ))
             ) : (
