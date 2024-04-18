@@ -66,12 +66,12 @@ async function getNoCustom() {
 }
 
 async function searchProduct(id) {
-  console.log(id);
   const responseData = await axiosInstanceProducts
-    .get(`/get/${id._id}`)
+    .get(`/get/${id}`)
     .then((res) => {
       console.log(`encontre producto with id ${id}`);
       console.log(res.data);
+      return res.data;
     })
     .catch((err) => console.log(err));
 

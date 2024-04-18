@@ -1,8 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./PageSingle.css"
 import img from "../../assets/images/band-regimg.jpg"
+import { useSearchParams } from 'react-router-dom';
+import { searchProduct } from "../../api/products.api";
 
-function PageSingle() {
+function PageSingle(props) {
+    let baseurl = window.location.href
+    const myArray = baseurl.split("/");
+    const [productData,setproductData] = useState([])
+
+async function obtenerdatos() {
+    var datos = await searchProduct(myArray[4])
+    
+    console.log(datos.data[0])
+    setproductData(datos.data[0])
+}
+
+ useEffect(() => {
+    obtenerdatos()
+  },[]);
+
     const [count, setCount] = useState(0);
     function subir() {
         setCount(count + 1)
@@ -17,20 +34,18 @@ function PageSingle() {
            <div className='product-container'>
 
             <div className='product-img'>
-                <img className='img' src={img} alt="torta" />
+                <img className='img' src={productData.image} alt="torta" />
             </div>
 
             <div className='product-details'>
 
-                <h className="product-header">Pastel de chocolate</h>
+                <h className="product-header">{productData.name}</h>
 
                 <div className='product-description'>
-                    <h className="description-text">Preparacion: 15min</h>
-                    <h className="description-text">Coccion: 20min</h>
-                    <h className="description-text">Dificultad: Dificil</h>
+                    <h className="description-text">Stock: {productData.stock}</h>
                 </div>
 
-                <div className='price'>$23.00</div>
+                <div className='price'>${productData.price}</div>
 
                 <div className='controles'>
                     <button onClick={bajar} className='button'><span style={{color:'white',backgroundColor:'black'}} className="material-symbols-outlined">arrow_back_ios</span></button>
